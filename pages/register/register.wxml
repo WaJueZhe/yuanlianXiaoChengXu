@@ -1,0 +1,55 @@
+<!--pages/register/register.wxml-->
+<view class='register'>
+  <view class='img'>
+    <image src='../../img/icn_logo@2x.png'></image>
+  </view>
+
+  <view class='select' hidden="{{driverBox}}">
+    <view class='textCenter'>请选择身份</view>
+
+    <view class="diver" bindtap='driver'>
+      <view class="diver-left">
+        <i class="iconfont icon-auto"></i>
+      </view>
+      <view class="diver-right">我是司机
+        <i class="iconfont icon-jiantou"></i>
+      </view>
+    </view>
+
+    <view class="diver" bindtap='shipper'>
+      <view class="diver-left">
+        <i class="iconfont icon-gerenzhongxin"></i>
+      </view>
+      <view class="diver-right">我是货主
+        <i class="iconfont icon-jiantou"></i>
+      </view>
+    </view>
+  </view>
+
+  <view class="phone" hidden="{{message}}">
+      <view class="mobile">
+        <text class="number">姓名</text>
+        <view class="inputBox">
+          <input type="text" placeholder="请输入姓名" value='{{name}}' bindinput="setName"></input>
+        </view>
+      </view>
+      <view class="mobile">
+        <text class="number">手机号</text>
+        <view class="inputBox">
+          <input type='number' placeholder="请输入手机号" maxlength='11' value='{{phone}}' bindinput="setPhone"></input>
+        </view>
+      </view>
+      <view class="mobile">
+        <text class="number">验证码</text>
+        <view class="inputBox">
+          <input type='number' placeholder="请输入验证码" value='{{code}}' bindinput="setCode"></input>
+          <button class="code" bindtap='gainCode' wx:if="{{!butFlag}}">获取验证码</button>
+          <button class="codeTime" disabled='true' wx:if="{{butFlag}}">({{time}})</button>
+        </view>
+      </view>
+      <view class="choose">
+        <view class="prev" bindtap='step'>上一步</view>
+        <view class="next {{ name != '' && phone != '' && code != '' ? 'nextActive' : ''}}" bindtap='next'>下一步</view>
+      </view>
+    </view>
+</view>

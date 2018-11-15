@@ -1,0 +1,5 @@
+{
+  "usingComponents":{
+    "app-serch-card":"../../../compontent/query/serchCard/serchCard"
+  }
+}

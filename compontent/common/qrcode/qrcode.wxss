@@ -1,0 +1,47 @@
+/* pages/main/index.wxss */
+
+.qrodeContent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.qrodeContent .box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
+  width: 440rpx;
+  height: 500rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+
+.qrodeContent .box .title {
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  background-color: #061128;
+}
+
+.qrodeContent .box .main {
+  width: 100%;
+  height: 430rpx;
+  background-color: #fff;
+}
+
+.qrodeContent .zezhao {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}

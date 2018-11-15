@@ -1,0 +1,39 @@
+<!--compontent/c_compontent/finishtaskCard/finishtaskCard.wxml-->
+<view class="taskCard">
+  <!-- 数字视图 -->
+  <view class="number">
+    <!-- 提货数字栏 -->
+     <view class="tihuo">1</view> 
+    <!-- 卸货数字栏 -->
+     <!-- <view class="xiehuo">2</view> -->
+  </view>
+  <!-- 提货标题栏 -->
+  <view class="title">
+    <text>提货</text>
+    <text>未到提货点</text>
+  </view>
+  <!-- 卡片信息 -->
+  <view class="detail">
+    <view class="address">广州</view>
+    <view class="tail">
+      <view class='dingwei'>
+        <text class='iconfont icon-dingwei'></text>
+        <text class='name'>广州--黄埔区广州--黄埔区广州--黄埔区广州--黄埔区</text>
+      </view>
+      <view class='dingwei'>
+        <text class='iconfont icon-qian'></text>
+        <text class='name'>代收货款￥20</text>
+      </view>
+
+      <view class='msg-number'>
+        <view>4件</view>
+        <view>12方</view>
+        <view>6吨</view>
+      </view>
+
+    </view>
+  </view>
+  <view class="tain">
+    <text> 尚未签发</text>
+  </view>
+</view>

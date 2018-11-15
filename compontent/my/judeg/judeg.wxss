@@ -1,0 +1,135 @@
+/* compontent/my/judeg/judeg.wxss */
+
+.judeg-content {
+  width: 100%;
+}
+
+/* 评价人 */
+
+.judeg-content .pepole {
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  border-bottom: 1px solid #dedede;
+}
+
+.judeg-content .pepole button {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  font-size: 15px;
+  border: none;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 0;
+}
+
+/* 选中时的样式 */
+
+.judeg-content .pepole .activePeople {
+  font-weight: bold;
+}
+
+.judeg-content .pepole .activePeople::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35%;
+  height: 8rpx;
+  background-color: #061128;
+}
+
+/* 满意程度 */
+
+.judeg-content .how {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+
+.judeg-content .how > view {
+  display: flex;
+  width: 100%;
+  border: 1px solid #061128;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.judeg-content .how>view button {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  border: none;
+  background-color: #fff;
+  border-right: 1px solid #061128;
+  border-radius: 0;
+}
+
+.judeg-content .how>view button:last-child {
+  border: none;
+}
+
+/* 选中时的样式 */
+
+.judeg-content .how>view .activeHow {
+  background-color: #061128;
+  color: #fff;
+}
+
+/* 评论面板 */
+
+.judeg-content .conMain {
+  margin-top: 30rpx;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  /* padding-bottom: 10rpx; */
+}
+
+.conMain .headerPhoto {
+  /* margin-top: 10rpx;
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx; */
+  font-size: 15px;
+  /* padding: 0 20rpx; */
+}
+
+.conMain .headerPhoto image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.conMain .headerPhoto text {
+  margin-left: 16rpx;
+  vertical-align: middle;
+}
+
+.conMain .headerPhoto .time {
+  font-size: 12px;
+  color: #999;
+}
+
+.conMain > view {
+  /* margin-bottom: 20rpx; */
+  border-bottom: 1px solid #eee;
+  padding: 20rpx;
+  padding-top: 10rpx;
+}
+
+.conMain .text {
+  margin-top: 10rpx;
+  font-size: 12px;
+  padding: 0 20rpx;
+  line-height:40rpx;
+}
+
+.conMain .text text {
+  opacity: 0;
+}

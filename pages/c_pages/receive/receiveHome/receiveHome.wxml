@@ -1,0 +1,82 @@
+<!--pages/c_pages/receive/receiveHome/receiveHome.wxml-->
+<view class='receiveHome' wx:if="{{isShow}}">
+  
+  <view class="sign-in">
+    <view class="sign-left">
+      <view class='tab'>
+        <view class='tab-item'><navigator url='/pages/c_pages/receive/receiveHome/receiveHome'>收货</navigator></view>
+        <view class='tab-item'>
+          <navigator url='/pages/c_pages/deliver/deliverHome/deliverHome'>发货</navigator>
+        </view>
+      </view>
+    </view>
+
+    <view class="sign-right">
+      <view class="sign-item {{ num ==1 ? 'signActive' : '' }}" bindtap='querySum' id='1'>今天</view>
+      <view class="sign-item {{ num ==2 ? 'signActive' : '' }}" bindtap='querySum' id='2'>近3天</view>
+      <view class="sign-item {{ num ==3 ? 'signActive' : '' }}" bindtap='querySum' id='3'>近7天</view>
+      <view class="sign-item" bindtap='more'>更多
+        <text></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="modal" hidden='{{modal}}'>
+    <view class="{{ num ==4 ? 'signActive' : '' }}" bindtap='querySum' id='4'>上月</view>
+    <view class="{{ num ==5 ? 'signActive' : '' }}" bindtap='querySum' id='5'>本月</view>
+  </view>
+
+  <view class="info-box">
+    <view class="info-item" bindtap='queryData' id='1'>
+        <view class="item-top">
+          <text>{{intransitQty}}</text>单</view>
+        <view class="item-bot">在途待签</view>
+    </view>
+    <view class="info-item" bindtap='queryData' id='2'>
+        <view class="item-top">
+          <text>{{signedOK}}</text>单</view>
+        <view class="item-bot">正常签收</view>
+    </view>
+    <view class="info-item" bindtap='queryData' id='3'>
+        <view class="item-top">
+          <text>{{signedNonOK}}</text>单</view>
+        <view class="item-bot">异常签收</view>
+    </view>
+  </view>
+
+  <view class="seeSendList">
+    <navigator url='../historyList/historyList'>
+      查看全部
+      <text class='class="iconfont icon-jiantou"'></text>
+      <text class='line'></text>
+    </navigator>
+  </view>
+
+  <!--一条分割线-->
+  <view class="usuallyWork">常用功能</view>
+
+  <!--应用展示-->
+  <view class="apps">
+    <view class="apps-item">
+      <navigator wx:if="{{userType=='pcuser'}}" url='/pages/c_pages/userSetting/userSetting'>
+        <view class="images">
+          <image src="../../../../img/setting.png"></image>
+        </view>
+        <text>设置</text>
+      </navigator>
+
+      <navigator wx:if="{{userType=='customer'}}" url='/pages/c_pages/cuserSetting/userSetting'>
+        <view class="images">
+          <image src="../../../../img/setting.png"></image>
+        </view>
+        <text>设置</text>
+      </navigator>
+    </view>
+  </view>
+
+  <view  bindtap="scan" class="scan" bindtap='scanNo'>
+    <text class="iconfont icon-chadan"></text> 扫描签单
+  </view>
+</view>
+
+<web-view wx:if="{{!isShow}}" src="{{scanUrl}}"></web-view>

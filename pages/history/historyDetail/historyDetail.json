@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "运单详情",
+  "usingComponents": {
+    "app-history-card": "../../../compontent/history/historyDetailCard/historyDetailCard"
+  }
+}

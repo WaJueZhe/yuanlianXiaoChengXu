@@ -1,0 +1,72 @@
+/* pages/history/historyDetail/historyDetail.wxss */
+
+.historyDetailContent {
+  width: 100%;
+}
+
+/* 状态栏面板 */
+
+.statusMain {
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dcdcdc;
+  background-color: #fff;
+}
+
+.statusMain>view {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #383838;
+  font-size: 14px;
+  border-bottom: 1px solid #dcdcdc;
+  display: flex;
+}
+
+.statusMain .state > text {
+  font-weight: bold;
+}
+
+.statusMain>view>view {
+  flex: 1;
+  overflow: hidden;
+}
+
+.statusMain .estate view:first-child text {
+  color: #f68622;
+}
+
+.statusMain .start text {
+  color: #2166ff;
+}
+.statusMain .start .iconfont {
+  font-size: 20px;
+}
+
+.statusMain .middle {
+  position: relative;
+}
+
+.statusMain .middle image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100rpx;
+  height: 3px;
+}
+
+.statusMain .end, .statusMain .start {
+  font-size: 16px;
+}
+
+.statusMain .end text {
+  color: #ff4545;
+}
+.statusMain .end .iconfont {
+  font-size: 20px;
+}
+.statusMain>view:last-child{
+  color: #939393;
+}

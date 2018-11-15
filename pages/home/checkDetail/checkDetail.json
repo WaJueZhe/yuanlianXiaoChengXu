@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "任务详情",
+  "usingComponents": {
+    "app-task-detail": "../../../compontent/home/detail/detail",
+    "app-check-card": "../../../compontent/home/checkDetailCard/checkDetailCard",
+    "app-qcode": "../../../compontent/common/qrcode/qrcode"
+  }
+}

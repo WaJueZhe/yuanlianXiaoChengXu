@@ -1,0 +1,31 @@
+<!--pages/c_pages/receive/receive_list/receive_list.wxml-->
+<view class='header'>
+  <view>
+    <scroll-view scroll-x="true" class="receive-h" scroll-left="{{scrollLeft}}">
+      <view class='tab-top'>
+        <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">{{task0_title}}</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">{{task1_title}}</view>
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">{{task2_title}}</view>
+      </view>
+    </scroll-view>
+
+      <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+        <!-- 新任务 -->
+        <swiper-item>
+             <app-receive-list task_criteriaStr="{{list0}}" nomore="{{pageNo > pages}}" bind:action = 'exFun'></app-receive-list> 
+        </swiper-item>
+        <!-- 配送中 -->
+        <swiper-item>
+           <app-receive-list task_criteriaStr="{{list1}}" nomore="{{pageNo > pages}}" bind:action = 'exFun'></app-receive-list> 
+        </swiper-item>
+        <!-- 异常单 -->
+        <swiper-item>
+           <app-receive-list task_criteriaStr="{{list2}}" nomore="{{pageNo > pages}}" bind:action = 'exFun'></app-receive-list>  
+        </swiper-item>
+
+      </swiper>
+
+  </view>
+</view>
+
+

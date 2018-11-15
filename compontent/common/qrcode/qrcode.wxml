@@ -1,0 +1,13 @@
+<!--pages/main/index.wxml-->
+<view class='qrodeContent'>
+  <view class='box'>
+    <view class='title'>
+      <view>扫码签发</view>
+      <view wx:if="{{false}}">扫码签收</view>
+    </view>
+    <view class='main'>
+    
+    </view>
+  </view>
+  <view class='zezhao'></view>
+</view>

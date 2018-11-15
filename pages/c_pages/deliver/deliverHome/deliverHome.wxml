@@ -1,0 +1,117 @@
+<view class='deliverHome' wx:if="{{isShow}}">
+  <view class="sign-in">
+    <view class="sign-left">
+      <view class='tab'>
+        <view class='tab-item'><navigator url='/pages/c_pages/receive/receiveHome/receiveHome'>收货</navigator></view>
+        <view class='tab-item'>
+          <navigator url='/pages/c_pages/deliver/deliverHome/deliverHome'>发货</navigator>
+        </view>
+      </view>
+    </view>
+
+    <view class="sign-right">
+      <!-- <block wx:for="{{signArray}}" wx:key="index">
+        <view class="sign-item {{ num ==index ? 'signActive' : '' }}" data-index='{{index}}' bindtap='signTab'>{{item}}</view>
+      </block> -->
+      <view class="sign-item {{ num ==1 ? 'signActive' : '' }}" bindtap='querySum' id='1'>今天</view>
+      <view class="sign-item {{ num ==2 ? 'signActive' : '' }}" bindtap='querySum' id='2'>近3天</view>
+      <view class="sign-item {{ num ==3 ? 'signActive' : '' }}" bindtap='querySum' id='3'>近7天</view>
+      <view class="sign-item" bindtap='more'>更多
+        <text></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="modal" hidden='{{modal}}'>
+    <view class="{{ num ==4 ? 'signActive' : '' }}" bindtap='querySum' id='4'>上月</view>
+    <view class="{{ num ==5 ? 'signActive' : '' }}" bindtap='querySum' id='5'>本月</view>
+  </view>
+
+  <view class="info-box">
+    <view class="info-item" bindtap='queryData' id='1'>
+        <view class="item-top">
+          <text>{{nonSignedQty}}</text>单</view>
+        <view class="item-bot">待签运单</view>
+    </view>
+    <view class="info-item" bindtap='queryData' id='2'>
+        <view class="item-top">
+          <text>{{unCompletedQty}}</text>单</view>
+        <view class="item-bot">在途运单</view>
+    </view>
+    <view class="info-item" bindtap='queryData' id='3'>
+        <view class="item-top">
+          <text>{{completedQty}}</text>单</view>
+        <view class="item-bot">已到货</view>
+    </view>
+  </view>
+
+  <view class="seeSendList">
+    <navigator url='../historyList/historyList'>
+      查看全部
+      <text class='class="iconfont icon-jiantou"'></text>
+      <text class='line'></text>
+    </navigator>
+  </view>
+
+  <view class="scan" bindtap='scanNo'>
+    <text class="iconfont icon-chadan"></text> 扫描签单
+  </view>
+
+  <!--一条分割线-->
+  <view class="usuallyWork">常用功能</view>
+
+  <!--应用展示-->
+  <view class="apps">
+    <view class="apps-item">
+      <navigator url='../../createTask/createTask'>
+        <view class="images">
+          <image src="../../../../img/send.png"></image>
+        </view>
+        <text>我要发货</text>
+      </navigator>
+    </view>
+    <view class="apps-item">
+      <navigator url='../../address/address'>
+        <view class="images">
+          <image src="../../../../img/map.png"></image>
+        </view>
+        <text>常用地址</text>
+      </navigator>
+    </view>
+    <view class="apps-item">
+      <navigator url='../../driver/driver'>
+        <view class="images">
+          <image src="../../../../img/driver.png"></image>
+        </view>
+        <text>司机</text>
+      </navigator>
+    </view>
+    <view class="apps-item">
+      <navigator url='../../vehicle/vehicle'>
+        <view class="images">
+          <image src="../../../../img/vehicle.png"></image>
+        </view>
+        <text>车辆</text>
+      </navigator>
+    </view>
+    <view class="apps-item">
+      <navigator url='../../createHistory/createHistory'>
+        <view class="images">
+          <image src="../../../../img/sendSignList.png"></image>
+        </view>
+        <text>发货记录</text>
+      </navigator>
+    </view>
+
+    <view class="apps-item">
+      <navigator url='/pages/c_pages/userSetting/userSetting'>
+        <view class="images">
+          <image src="../../../../img/setting.png"></image>
+        </view>
+        <text>设置</text>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<web-view wx:if="{{!isShow}}" src="{{scanUrl}}"></web-view>

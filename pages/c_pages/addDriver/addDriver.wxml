@@ -1,0 +1,48 @@
+<!--pages/c_pages/addDriver/addDriver.wxml-->
+<view class="form">
+
+  <view class="group-item">
+    <view class="type">
+      <text>*</text> 姓名：</view>
+    <view class="select">
+      <input type="text" placeholder="请输入您的姓名" value='{{driverName}}' bindinput='setName'></input>
+    </view>
+  </view>
+
+  <view class="group-item">
+    <view class="type">
+      <text>*</text> 年龄：</view>
+    <view class="select">
+      <input type="number" placeholder="请输入您的年龄" value='{{driverAge}}' bindinput='setAge'></input>
+    </view>
+  </view>
+
+  <view class="group-item">
+    <view class="type">
+      <text>*</text> 性别：</view>
+    <view class="select">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}" wx:key="{{index}}">
+          <radio value="{{item.value}}" color='#2d8cf0' checked="{{item.checked}}" />{{item.name}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="group-item">
+    <view class="type">
+      <text>*</text> 手机号：</view>
+    <view class="select">
+      <input type="number" placeholder="请输入手机号" maxlength="11" value='{{driverMobile}}' bindinput='setMobile'></input>
+    </view>
+  </view>
+
+  <view class="group-item">
+    <view class="type">
+      <text v-if="this.identityType == 'pcuser'">*</text>身份证号：</view>
+    <view class="select">
+      <input type="idcard" placeholder="请输入身份证号" maxlength="18" value='{{driverIdentityId}}' bindinput='setIdentityId'></input>
+    </view>
+  </view>
+</view>
+<view class="from-btn" bindtap='addSubmit'>提交</view>

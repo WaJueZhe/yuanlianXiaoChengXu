@@ -1,0 +1,19 @@
+<!--pages/home/checkDetail/checkDetail.wxml-->
+  <view class='big' style='position:{{position}}'>
+    <app-task-detail status="{{statsPage}}"></app-task-detail>
+  <app-check-card carkList="{{carkList}}" bind:toggleCodeR="codeToggleR" bind:toggleCodeS="codeToggleS" bind:getCardList="getDetailPage"></app-check-card>
+
+<!-- 二维码弹框 -->
+<view class='qrodeContent' hidden="{{codeShow}}" bindtap='showCode'>
+  <view class='box'>
+    <view class='title'>
+      <view wx:if="{{isSend}}">扫码签发</view>
+      <view wx:if="{{!isSend}}">扫码签收</view>
+    </view>
+    <view class='main'>   
+      <canvas canvas-id='mycanvas'></canvas>
+    </view>
+  </view>
+  <!-- <view class='zezhao' bindtap='showCode'></view> -->
+</view>
+  </view>

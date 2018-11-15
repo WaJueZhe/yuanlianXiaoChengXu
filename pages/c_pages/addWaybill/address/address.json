@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "选择地址",
+  "usingComponents": {
+    "lodingAddress": "../../../../../compontent/c_compontent/lodingAddress/lodingAddress",
+    "unloadAddress":"../../../../../compontent/c_compontent/unloadAddress/unloadAddress"
+  }
+}

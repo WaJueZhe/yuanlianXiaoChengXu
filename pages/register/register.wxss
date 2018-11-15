@@ -1,0 +1,172 @@
+/* pages/register/register.wxss */
+page {
+  background-color: #fff;
+}
+
+.register .img {
+  margin: auto;
+  margin-top:80rpx;
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.register .img > image {
+  width: 100%;
+  height: 100%;
+}
+
+.register .select {
+  margin-top:40rpx;
+  padding:0 40rpx;
+  box-sizing:border-box;
+}
+
+.register .select .textCenter {
+  margin-bottom: 40rpx;
+  text-align: center;
+  font-size: 14px;
+}
+
+.register .select .diver {
+  margin:auto;
+  padding:40rpx;
+  width:100%;
+  height:160rpx;
+  border:1px solid #ccc;
+  box-sizing:border-box;
+}
+
+.register .select .diver:last-child {
+  margin-top: 40rpx;
+}
+
+.register .select .diver .diver-left {
+  float: left;
+  width:76rpx;
+  height:76rpx;
+  line-height:76rpx;
+  text-align:center;
+  border-radius:50%;
+  background-color: #2166ff;
+}
+
+.register .select .diver .diver-left > i {
+  font-size: 25px;
+  color :#fff;
+}
+
+.register .select .diver .diver-right {
+  float:right;
+  width:80%;
+  height:76rpx;
+  line-height:76rpx;
+  font-size:16px;
+}
+
+.register .select .diver .diver-right > i {
+  float:right;
+}
+
+.phone {
+  margin-top:40rpx;
+  padding: 0 60rpx;
+  box-sizing:border-box;
+}
+
+.phone .mobile {
+  position: relative;
+  margin-bottom:40rpx;
+  width:100%;
+  height:80rpx;
+  line-height:80rpx;
+  border-bottom:1px solid #ccc;
+}
+
+.phone .mobile .number {
+  position: absolute;
+  top:0;
+  left:0;
+  width:20%;
+  height:80rpx;
+  line-height:80rpx;
+  font-size: 16;
+  font-weight: 500;
+}
+
+.phone .mobile .inputBox {
+  position: absolute;
+  top:0;
+  right:0;
+  width:80%;
+  height:100%;
+}
+
+.phone .mobile .inputBox > input {
+  width:100%;
+  height:100%;
+  font-size:16px;
+}
+
+.phone .mobile .inputBox > .code {
+  position: absolute;
+  top:10rpx;
+  right:0;
+  height:70rpx;
+  line-height:70rpx;
+  text-align:center;
+  font-size:16px;
+  background-color: #2166ff;
+  color :#fff;
+  border-radius:10rpx;
+  z-index:1111;
+}
+
+.phone .mobile .inputBox > .codeTime {
+  position: absolute;
+  top:10rpx;
+  right:0;
+  width:200rpx; 
+  height:70rpx;
+  line-height:70rpx;
+  text-align:center;
+  font-size:16px;
+  background-color: #fff;
+  border-radius:10rpx;
+  z-index:1111;
+}
+
+.phone .choose {
+  margin-top:40rpx;
+  padding: 0 60rpx;
+  width:100%;
+  box-sizing:border-box;
+  display:flex;
+  justify-content:space-between;
+}
+
+.phone .choose .prev {
+  flex:1;
+  margin-right:40rpx;
+  height:80rpx;
+  line-height:80rpx;
+  text-align:center;
+  font-size:32rpx;
+  border-radius:10rpx;
+  color:#fff;
+  background-color: #2166ff;
+}
+
+.phone .choose .next {
+  flex:1;
+  height:80rpx;
+  line-height:80rpx;
+  text-align:center;
+  font-size:32rpx;
+  border-radius:10rpx;
+  color :#fff;
+  background: #ccc;
+}
+
+.nextActive {
+  background-color: #2166ff !important;
+}

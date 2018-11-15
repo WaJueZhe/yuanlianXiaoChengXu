@@ -1,0 +1,4 @@
+<!--pages/map/map.wxml-->
+<view class='mapContent'>
+  <map id='map' style="height:{{mapHeight}}" polyline="{{polyline}}" include-points="{{markers}}" markers="{{markers}}"></map>
+</view>

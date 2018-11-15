@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新增运单",
+  "usingComponents": {
+    "date-picker":"../../../compontent/c_compontent/date-picker/date-picker"
+  }
+}

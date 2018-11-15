@@ -1,0 +1,54 @@
+/* compontent/common/canvas/canvas.wxss */
+
+.canvasContent {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 300px;
+}
+
+.canvasContent canvas {
+  width: 100%;
+  height: 250px;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.canvasContent .but{
+  position: absolute;
+  bottom: 40rpx;
+  padding: 0 20rpx;
+  width: 100%;
+  height: 80rpx;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.canvasContent .but > button:first-child {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-right: 20rpx;
+  background-color: #2166ff;
+  color: #fff;
+}
+
+.canvasContent .but > button:last-child {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #383838;
+  color: #fff;
+}
+
+/* .canvasContent button:nth-child(2){
+  background-color: #2166ff;
+  left: 20rpx;
+}
+
+.canvasContent button:last-child{
+  background-color: #383838;
+  right: 20rpx;
+} */

@@ -1,0 +1,28 @@
+<!--pages/history/historyDetail/historyDetail.wxml-->
+<view class='historyDetailContent'>
+  <!-- 状态栏面板 -->
+  <view class='statusMain'>
+    <view class='estate'>
+      <view class='state'>状态：
+        <text>已完成</text>
+      </view>
+      <view bindtap='callPhone' data-phone="{{historyStats.createByPhone}}">联系人：
+        <text class='iconfont icon-dianhua1'></text>{{historyStats.createByName}}
+      </view>
+    </view>
+    <view>
+      <view class='start'>
+        <text class='iconfont icon-shi'></text>{{historyStats.deliverPlanDate}}
+      </view>
+      <view class='middle'>
+        <image src='../../../img/inc_Arrow.png'></image>
+      </view>
+      <view class='end'>
+        <text class='iconfont icon-zhong'></text>{{historyStats.unloadPlanDate}}
+      </view>
+    </view>
+    <view>备注：</view>
+  </view>
+  <!-- 卡片视图 -->
+  <app-history-card historyCard="{{historyList}}"></app-history-card>
+</view>

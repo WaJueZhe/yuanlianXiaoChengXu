@@ -1,0 +1,10 @@
+<!--pages/messageDetail/messageDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='messageDetail'>
+  <view class='title'>{{title}}</view>
+  <view class='time'>{{sendTime}}</view>
+  <view class='text'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+   <!-- <view class='team'>作者:</view>  -->
+</view>

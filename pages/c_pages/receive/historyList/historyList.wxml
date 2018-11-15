@@ -1,0 +1,30 @@
+<!--pages/c_pages/receive/historyList/historyList.wxml-->
+<view class='header'>
+  <view>
+    <scroll-view scroll-x="true" class="receive-h" scroll-left="{{scrollLeft}}">
+      <view class='tab-top'>
+        <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">待签收</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">正常签收</view>
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">异常签收</view>
+      </view>
+    </scroll-view>
+
+      <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+        <!-- 新任务 -->
+        <swiper-item>
+             <historyCard task_criteriaStr="{{list}}" nomore="{{pageNo > pages}}" bind:action = 'exFun'></historyCard> 
+        </swiper-item>
+        <!-- 配送中 -->
+        <swiper-item>
+           <historyCard task_criteriaStr="{{list}}" nomore="{{pageNo > pages}}" bind:action = 'exFun'></historyCard> 
+        </swiper-item>
+        <!-- 异常单 -->
+        <swiper-item>
+        <scroll-view scroll-y="true" class="scoll-h">
+           <historyCard task_criteriaStr="{{list}}" nomore="{{pageNo > pages}}" bind:action = 'exFun'></historyCard>
+        </scroll-view>
+        </swiper-item>
+      </swiper>
+
+  </view>
+</view>

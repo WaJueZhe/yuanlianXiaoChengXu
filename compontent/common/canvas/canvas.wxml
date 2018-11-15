@@ -1,0 +1,12 @@
+<!--compontent/common/canvas/canvas.wxml-->
+<view class='canvasContent'>
+  <canvas class="canvas" id="canvas" canvas-id="canvas" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
+   <view class="but" wx:if="{{fahuo}}">
+    <button type="default" bindtap="cleardraw">清除签名</button>
+    <button type="default" bindtap="getimg">确认起运</button>
+  </view> 
+  <view class="but" wx:if="{{exception}}">
+    <button type="default" bindtap="cleardraw">清除签名</button>
+    <button type="default" bindtap="expSign">确认签名</button>
+  </view>
+</view>

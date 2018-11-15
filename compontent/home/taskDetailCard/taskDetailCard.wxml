@@ -1,0 +1,46 @@
+<!--compontent/home/taskDetailCard/taskDetailCard.wxml-->
+<view class='CardContent'>
+  <view class='card' wx:for="{{cardList}}" wx:key="{{index}}">
+    <!-- 提货标题栏 -->
+    <view class='title pick' wx:if="{{item.stopType == 'D'}}">
+      <text>提货</text>
+      <text>要求提货时间：{{item.planDate}}</text>
+      <view class='{{item.number==item.length?"numberline":""}}'>{{item.number}}</view>
+    </view>
+    <!-- 卸货标题栏 -->
+    <view class='title cargo' wx:if="{{item.stopType == 'U'}}">
+      <text>卸货</text>
+      <text>要求卸货时间：{{item.planDate}}</text>
+      <view class='{{item.number==item.length?"numberline":""}}'>{{item.number}}</view>
+    </view>
+    <!-- 卡片主体信息 -->
+    <view class='mainContent'>
+      <view class='main-top'>
+        <view>{{item.cityName}}</view>
+        <view class='main-cent'>
+          <view wx:if="{{item.stopCompany}}" class='waybill'><text class='iconfont icon-yundan'></text> {{item.stopCompany}}</view>
+          <view wx:else class='waybill'><text class='iconfont icon-yundan'></text> 运单号：{{item.shipmentIdList}}</view> 
+          <view class='site'>
+            <text class='iconfont icon-dingwei'></text> {{item.cityName}}{{item.street}}
+          </view>
+          <view>
+            <text class='iconfont icon-fangxiang'></text> 距你：{{item.alldistance}}公里
+          </view>
+        </view>
+        <view>
+          <text>{{item.totalUnits}}{{item.unitUnit}}</text>
+          <text>{{item.totalVolume}}{{item.volumeUnit}}</text>
+          <text>{{item.totalWeight}}{{item.weightUnit}}</text>
+        </view>
+      </view>
+      <view class='main-bottom'>
+        <view bindtap='watchMap' data-addr="{{item.provinceName+item.cityName+item.districtName+item.street}}" data-name="{{item.stopCompany}}" data-lng="{{item.longitudeX}}" data-lat="{{item.lantitudeY}}"> 
+          <text class='iconfont icon-dingwei'></text>查看地图
+        </view>
+        <view bindtap='callPhone' data-phoneNum="{{item.contactMobile}}">
+          <text class='iconfont icon-dianhua1'></text>{{item.contactPerson}}
+        </view> 
+      </view>
+    </view>
+  </view>
+</view>

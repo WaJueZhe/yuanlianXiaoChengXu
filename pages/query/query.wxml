@@ -1,0 +1,8 @@
+<!--pages/check/check.wxml-->
+<view class='querycontent'>
+  <view class='int'>
+    <view><image src='../../img/inc_Slogan.png'></image></view>
+    <input type='text' placeholder='请输入关键字' value='{{serchCode}}' bindinput='makeInput'></input>
+    <button bindtap='serchTask'>查询</button>
+  </view>
+</view>

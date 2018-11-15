@@ -1,0 +1,29 @@
+/* pages/set/spliceSet/spliceSet.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.setContent {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.setContent input {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: none;
+  border-bottom: 1px solid #ececec;
+  font-size: 15px;
+}
+
+.setContent button{
+  margin-top: 40rpx;
+  background-color: #2166ff;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}

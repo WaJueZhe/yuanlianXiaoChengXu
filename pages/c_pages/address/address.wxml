@@ -1,0 +1,9 @@
+<!--pages/c_pages/address/address.wxml-->
+<div class="site">
+  <div class="shipments {{ num ==1 ? 'active' : '' }}" bindtap="site" id="1">装货地址</div>
+  <div class="shipments {{ num ==2 ? 'active' : '' }}" bindtap="site" id="2">卸货地址</div>
+</div>
+
+<lodingAddress class="{{num ==1 ?'show':'hide'}}"></lodingAddress>
+
+<unloadAddress class="{{num ==2 ?'show':'hide'}}"></unloadAddress> 

@@ -1,0 +1,47 @@
+<!--pages/history/history.wxml-->
+<view class='hstoryContent'>
+<scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="scrollToLower">
+  <view class='card' wx:for="{{historyList}}" wx:key="{{index}}">
+    <view class='title'>
+      <text>任务编号：{{item.taskNo}}</text>
+      <text>已完成</text>
+    </view>
+    <!-- 卡片视图主题内容 -->
+    <view class='card-main'>
+      <!-- 卡片视图顶部 -->
+      <view class='main-top'>
+        <view class='main-top-left'>
+          <view>
+            <text class='iconfont icon-yundan'></text>
+            <text>站点数量：<text>{{item.stopCount}}</text></text>
+          </view>
+          <view>
+            <text class='iconfont icon-shijian'></text>
+            <text>开始时间：<text>{{item.deliverPlanDate}}</text></text>
+          </view>
+          <view>
+            <text class='iconfont icon-weizhi'></text>
+            <text>大约行驶：<text>{{item.totalDistance}}{{item.distanceUnit}}</text></text>
+          </view>
+        </view>
+      </view>
+      <!-- 卡片视图中部 -->
+      <view class='main-middle'>
+        <text>{{item.totalUnits}}{{item.unitUnit}}</text>
+        <text>{{item.totalVolume}}{{item.volumeUnit}}</text>
+        <text>{{item.totalWeight}}{{item.weightUnit}}</text>
+        <view class='line'></view>
+      </view>
+      <!-- 卡片视图底部 -->
+      <view class='main-bottom'>
+        <navigator url='historyDetail/historyDetail?taskid={{item.id}}'>查看详情
+          <text class='class="iconfont icon-jiantou"'></text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='nomore' wx:if="{{nomore}}">
+    <text>没有更多数据了</text>
+  </view>
+</scroll-view>
+</view>

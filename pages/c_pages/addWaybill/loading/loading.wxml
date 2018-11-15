@@ -1,0 +1,46 @@
+<!--pages/c_pages/addWaybill/loading /loading .wxml-->
+<view class='shipment'>装货</view>
+<view class="serch">
+  <view class="input">
+    <i class="iconfont icon-search"></i>
+    <input type="text" placeholder="请输入地址编码"></input>
+  </view>
+  <view class='button'>查询</view>
+</view>
+
+<view class="group">
+  <view class='groupBox'>
+    <view class="code">编码：22222</view>
+    <view class="info">
+      <view class="name">
+        <text class="iconfont icon-dianhua1"></text>张三 / 13512345678</view>
+    </view>
+    <view class="company-name">
+      <view class="left">
+        <text class="iconfont icon-shouyed"></text>
+      </view>
+      <view class="right">广州</view>
+    </view>
+    <view class="company-name">
+      <view class="left">
+        <text class="iconfont icon-dingwei"></text>
+      </view>
+      <view class="right">黄埔</view>
+    </view>
+  </view>
+  <view class="group-btn">
+      <view class="btn-left">
+        <navigator url='/pages/c_pages/compileAddress/compileAddress'>
+          <text class="iconfont icon-bianji"></text>
+          编辑
+        </navigator>
+      </view>
+    <view class="btn-left">
+      <text class="iconfont icon-delete"></text>
+      删除</view>
+  </view>
+</view>
+
+<view class="add-address">
+  <navigator url='/pages/c_pages/addAddress/addAddress'>新增地址</navigator>
+</view>

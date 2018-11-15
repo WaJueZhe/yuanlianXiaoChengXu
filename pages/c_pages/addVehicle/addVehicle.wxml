@@ -1,0 +1,52 @@
+<!--pages/c_pages/addVehicle/addVehicle.wxml-->
+<view class="form">
+
+  <view class="group-item">
+    <view class="type">
+      <text>*</text> 车牌号：</view>
+    <view class="select">
+      <input type="text" placeholder="请输入车牌号" maxlength='7' value='{{vehicleNo}}' bindinput='setVehicleNo'></input>
+    </view>
+  </view>
+
+  <view class="group-item" bindtap='groupCar'>
+    <view class="type"> 车型：</view>
+    <view class="select">
+      <text class="deliver" wx:if="{{carType}}">{{carType}}</text>
+      <text class="deliver" wx:else>请选择类型</text>
+      <text class="iconfont icon-jiantou"></text>
+    </view>
+  </view>
+
+  <view class="group-item" bindtap='groupLicense'>
+    <view class="type">
+      <text>*</text> 牌照类型：</view>
+    <view class="select">
+      <text class="deliver" wx:if="{{license}}">{{license}}</text>
+      <text class="deliver" wx:else>请选择类型</text>
+      <text class="iconfont icon-jiantou"></text>
+    </view>
+  </view>
+
+  <view class="group-item">
+    <view class="type">车长(米)：</view>
+    <view class="select">
+      <input type="digit" placeholder="请输入车长（选填）" value='{{length}}' bindinput='setLength'></input>
+    </view>
+  </view>
+</view>
+<view class="from-btn" bindtap='addSubmit'>提交</view>
+
+<!-- 车型弹框 -->
+<view class="modal-box hide{{ isShow ? 'show':'' }}">
+  <view class="modal-list">
+    <view class="modal-item" wx:for="{{carTypeList}}" wx:key="index" data-id="{{item.val}}" data-text='{{item.lbl}}' bindtap='description'>{{item.lbl}}</view>
+  </view>
+</view>
+
+<!-- 牌照类型弹框 -->
+<view class="modal-box hide{{ licenseShow ? 'show':'' }}">
+  <view class="modal-list">
+    <view class="modal-item" wx:for="{{licenseList}}" wx:key="index" data-id='{{item.val}}' data-text='{{item.lbl}}' bindtap='chooseLicense'>{{item.lbl}}</view>
+  </view>
+</view>

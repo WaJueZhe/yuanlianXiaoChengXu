@@ -1,0 +1,38 @@
+<!--compontent/home/detail/detail.wxml-->
+<view class='detailContent'>
+  <!-- 状态栏 -->
+  <view class='main-top'>
+    <view>运单号：{{status.taskNo}}</view>
+
+    <view class='info'>
+      <view class='status'>状态：
+        <text wx:if="{{status.status == 0}}">待接单</text>
+        <text wx:if="{{status.status == 1}}">已接单</text>
+        <text wx:if="{{status.status == 2}}">执行中</text>
+        <text wx:if="{{status.status == 10}}">已完成</text>
+        <text wx:if="{{status.status == 98}}">已拒绝</text>
+        <text wx:if="{{status.status == 99}}">已取消</text>
+      </view>
+      <view bindtap='callPhone' data-phoneNum="{{status.createByPhone}}">
+        联系人：
+        <text class='iconfont icon-dianhua1'></text>{{status.createByName}}
+      </view>
+    </view>
+
+    <view class='roadLess'>
+      <view class='start'>
+        <text class='iconfont icon-shi'></text>
+        <text class='time'>{{status.deliverPlanDate}}</text>
+      </view>
+      <view class='img'>
+        <image src='../../../img/inc_Arrow.png'></image>
+      </view>
+      <view class='end'>
+        <text class='iconfont icon-zhong'></text>
+        <text>{{status.unloadPlanDate}}</text>
+      </view>
+    </view>
+
+      <view class='remark'>备注：{{status.taskDesc}}</view>
+  </view>
+</view>

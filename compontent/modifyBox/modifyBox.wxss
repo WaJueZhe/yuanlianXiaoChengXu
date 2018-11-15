@@ -1,0 +1,116 @@
+/* compontent/modifyBox/modifyBox.wxss */
+
+.modify {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 22;
+  width: 640rpx;
+  height: 360rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.card .title {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #061128;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+.card .main {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.card .main .but1 {
+  position: relative;
+  top: 30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 120rpx;
+  border: 1px solid #ccc;
+  width: 100%;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+
+.card .main .but1 > view {
+  width: 30%;
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 30px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.card .main .but1 .jia {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+
+.card .main .but1 .jian {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+}
+
+.card .main .but1 .bnt {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 100%;
+  border: 1px solid #cccccc;
+  border-top: none;
+}
+
+.card .main .but1 .bnt > input {
+  width: 100%;
+  height: 100%;
+  font-size: px2rem(62px);
+  color: zCl;
+  text-align: center;
+  vertical-align :top;
+}
+
+.card .but {
+  position: absolute;
+  left: 0;
+  bottom: 40rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  width: 100%;
+}
+
+.card .but > button {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #2166ff;
+  color: #ffffff;
+  font-size: 15px;
+  border-radius: 10rpx;
+}

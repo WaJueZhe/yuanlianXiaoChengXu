@@ -1,0 +1,88 @@
+<!--pages/c_pages/compileAddress/compileAddress.wxml-->
+<view class="form">
+  <view class="group-item" bindtap='chooseType'>
+    <view class="type">
+      <text>*</text> 地址类型：</view>
+    <view class="select">
+      <text class='deliver' wx:if="{{addressGenre}}">{{addressGenre}}</text>
+      <text class="deliver" wx:else>请选择类型</text>
+      <text class="iconfont icon-jiantou"></text>
+    </view>
+  </view>
+  <view class="group-item">
+    <view class="type">
+      <text>*</text> 地址编码：</view>
+    <view class="select">
+      <input type="text" placeholder="请输入编码" value='{{addressCode}}' bindinput='setAddressCode'></input>
+    </view>
+  </view>
+
+  <view class="group-item" bindtap='open'>
+    <view class="type">
+      <text>*</text> 省市区县：</view>
+    <view class="select">
+      <text class="deliver">{{province}}-{{city}}-{{county}}</text>
+      <text class="iconfont icon-jiantou"></text>
+    </view>
+  </view>
+
+  <view class="group-item">
+    <view class="type">
+      <text>*</text> 详细地址：</view>
+    <view class="select">
+      <input type="text" placeholder="请输入详细地址" value='{{street}}' bindinput='setStreet'></input>
+    </view>
+  </view>
+
+  <view class="group-item">
+    <view class="type">
+      <text>*</text> 联系人：</view>
+    <view class="select">
+      <input type="text" placeholder="请输入联系人" value='{{currentContactPerson}}' bindinput='setCurrentContactPerson'></input>
+    </view>
+  </view>
+
+  <view class="group-item">
+    <view class="type">
+      <text>*</text> 联系电话：</view>
+    <view class="select">
+      <input type="text" placeholder="请输入手机号码" maxlength="11" value='{{currentContactMobile}}' bindinput='setCurrentContactMobile'></input>
+    </view>
+  </view>
+
+  <view class="group-item">
+    <view class="type">单位名称：</view>
+    <view class="select">
+      <input type="text" placeholder="请输入单位名称" value='{{addressName}}' bindinput='setAddressName'></input>
+    </view>
+  </view>
+</view>
+
+<view class="from-btn" bindtap='editSubmit'>提交</view>
+
+<!-- 地址类型弹框 -->
+<view class="modal-box hide{{showView?'show':''}}" bindtap='cancleModal'>
+  <view class="modal-list">
+    <view class="modal-item" wx:for="{{arr}}" wx:key="id" data-text="{{item.name}}" data-id="{{item.id}}" bindtap='description'>{{item.name}}</view>
+  </view>
+</view>
+
+
+<!-- 选择地区弹框 -->
+ <view  wx:if="{{condition}}"  class="citypicker">
+  <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="bindChange" class="citybody">  
+    <view class="cityheader">  
+      <view bindtap="open" class="city-cancel">取消</view>  
+      <view bindtap="open" class="city-true">确定</view>  
+    </view>  
+    <picker-view-column>  
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>  
+    </picker-view-column>  
+    <picker-view-column>  
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>  
+    </picker-view-column>  
+    <picker-view-column>  
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>  
+    </picker-view-column>  
+  </picker-view>  
+</view>   

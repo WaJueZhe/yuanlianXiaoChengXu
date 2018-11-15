@@ -1,0 +1,64 @@
+<!--pages/home/home.wxml-->
+<view class='header'>
+  <!-- <app-tab-bar actived="{{active}}" bind:myclkTab="clkTab"></app-tab-bar> -->
+  <view>
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+      <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">新任务</view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">配送中</view>
+      <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">异常单</view>
+
+    </scroll-view>
+
+    <!-- 折就是轮播 -->
+    <!-- <view class='info-box'>
+        <view class='notice'>
+          <view class='notice-img'><image src='../../../img/notice-1.png'></image></view>
+          <swiper interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper" vertical="true">
+        
+          <block wx:for="{{imgUrls}}" wx:key="unique">
+            <swiper-item>
+             <view class='txt' bindtap='announcement'>
+                <view class='tet'>{{item}}</view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        </view>
+      </view>  -->
+
+
+
+    <!-- <view class='img' bindtap='refresh'><image src='../../../img/refresh-1.png'></image></view> -->
+
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+      <!-- 新任务 -->
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="taskLower" bindscrolltoupper="taskUpper" scroll-top="{{scrollTop}}">
+          <view class='normal-img'>
+            <image wx:if='{{normalImg}}' src='../../../img/refresh.gif'></image>
+          </view>
+          <app-new-card taskList="{{taskList}}" nomore="{{nomore}}"></app-new-card>
+        </scroll-view>
+      </swiper-item>
+      <!-- 配送中 -->
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="checkLower" bindscrolltoupper="checkUpper" scroll-top="{{scrollTop}}">
+          <view class='normal-img'>
+            <image wx:if='{{normalImg}}' src='../../../img/refresh.gif'></image>
+          </view>
+          <app-check-card checkList="{{checkList}}" nomore="{{nomore}}"></app-check-card>
+        </scroll-view>
+      </swiper-item>
+      <!-- 异常单 -->
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="normalLower" bindscrolltoupper="normalUpper" scroll-top="{{scrollTop}}">
+          <view class='normal-img'>
+            <image wx:if='{{normalImg}}' src='../../../img/refresh.gif'></image>
+          </view>
+          <app-normal-card cardList="{{cardList}}" nomore="{{nomore}}"></app-normal-card>
+        </scroll-view>
+      </swiper-item>
+
+    </swiper>
+  </view>
+</view>

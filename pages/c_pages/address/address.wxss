@@ -1,0 +1,35 @@
+/* pages/c_pages/address/address.wxss */
+.site {
+  padding:0 60rpx;
+  width:100%;
+  height:80rpx;
+  line-height:80rpx;
+  display:flex;
+  justify-content:space-between;
+  z-index:9999;
+  background-color:#ccc;
+  box-sizing: border-box;
+}
+
+.site .shipments {
+  flex:1;
+  text-align:center;
+  font-size:16px;
+}
+
+.site .shipments::after {
+  margin-left:40rpx;
+}
+
+.active {
+  color:#2166ff !important;
+  border-bottom:6rpx solid #2166ff !important;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

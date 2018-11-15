@@ -1,0 +1,5 @@
+<!--pages/home/normalDetail/normalDetail.wxml-->
+<scroll-view>
+  <app-task-detail status="{{statsPage}}"></app-task-detail>
+  <app-normal-card carkList="{{carkList}}"></app-normal-card>
+</scroll-view>  

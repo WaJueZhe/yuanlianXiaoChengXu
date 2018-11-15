@@ -1,0 +1,194 @@
+/* compontent/home/normalDetailCard/normalDetailCard.wxss */
+
+/* 引入字体图标 */
+@import '../../../css/icon-font/iconfont.wxss';
+
+.CardContent {
+  width: 100%;
+}
+
+.CardContent .card {
+  /* float: right; */
+  margin-left: 66rpx;
+  width: 88%;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 8rpx 8rpx #ccc;
+}
+
+.CardContent .card:last-child {
+  margin-bottom: 20rpx;
+}
+
+/* 标题栏 */
+
+.CardContent .card .title {
+  position: relative;
+  width: 97%;
+  height: 70rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  line-height: 70rpx;
+  font-size: 20px;
+  padding-left: 20rpx;
+  color: #fff;
+}
+
+.card .title text:nth-child(2) {
+  float: right;
+  margin-right: 24rpx;
+  font-size: 14px;
+}
+
+/* 提货标题栏 */
+
+.card .pick {
+  background-color: #2466ff;
+}
+
+/* 卸货标题栏 */
+
+.card .cargo {
+  background-color: #f68622;
+}
+
+/* 标题栏左侧数字视图 */
+
+.card .title view {
+  position: absolute;
+  top: 50%;
+  left: -60rpx;
+  transform: translateY(-50%);
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+}
+
+.card .title view::before {
+  content: '';
+  position: absolute;
+  bottom: -350rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2rpx;
+  background: linear-gradient(#2166ff, #21cdff);
+  height: 350rpx;
+}
+
+/* 最后一个不现实线条 */
+
+.card .title .numberline::before {
+  display: none;
+}
+
+.card .pick view {
+  color: #2466ff;
+  border: 4rpx solid #2466ff;
+}
+
+.card .cargo view {
+  color: #f68622;
+  border: 4rpx solid #f68622;
+}
+
+/* 卡片主体面板顶部 */
+
+.card .main-top {
+  position: relative;
+  width: 100%;
+  height: 220rpx;
+}
+
+.card .main-top>view:first-child {
+  position: absolute;
+  top: 50%;
+  left: 20rpx;
+  transform: translateY(-50%);
+  background-color: #374053;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 140rpx;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+.card .main-top>view:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 200rpx;
+  font-size: 15px;
+}
+
+.card .main-top>view:nth-child(2)>view {
+  margin-top: 10rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+
+.card .main-top>view:last-child {
+  position: absolute;
+  bottom: 10rpx;
+  left: 200rpx;
+}
+
+.card .main-top>view:last-child text {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  padding: 8rpx 6rpx;
+  font-size: 12px;
+  margin-right: 10rpx;
+}
+
+/* 查看地图,联系人 */
+
+.card .main-bottom {
+  width: 100%;
+  display: flex;
+  height: 82rpx;
+  line-height: 82rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  border-bottom-left-radius: 10rpx;
+}
+
+.card .main-bottom>view {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  color: #383838;
+  font-size: 16px;
+}
+
+.card .main-bottom>view:first-child::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: 1px;
+  border-right: 1px solid #ccc;
+}
+
+.main-bottom view:first-child text {
+  color: #15a7f3;
+  margin-right: 20rpx;
+}
+
+.main-bottom view:last-child text {
+  color: #2166ff;
+  margin-right: 20rpx;
+}

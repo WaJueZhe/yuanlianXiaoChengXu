@@ -1,0 +1,48 @@
+<!--pages/set/set.wxml-->
+<view class='setContent'>
+  <view class='heaerContent'>
+    <image src='{{imgSrc}}' bindtap='toSetPage'></image>
+    <view>
+      <view>{{driver.driverName}}</view>
+      <view>{{driver.driverMobile}}</view>
+    </view>
+  </view>
+  <view class='navList'>
+    <navigator url='../history/history'>
+      <text class='iconfont icon-lishirenwu '></text>历史任务
+    </navigator>
+    <navigator url='../manageBill/manageBill'>
+      <text class='iconfont icon-yundan1 '></text>运单管理
+    </navigator>
+    <navigator bindtap='myAccount'>
+      <text class='iconfont icon-wodezhanghu '></text>我的账户
+    </navigator>
+    <navigator bindtap='myAccount'>
+      <text class='iconfont icon-wenhao '></text>帮助中心
+    </navigator>
+    <navigator bindtap='myAccount'>
+      <text class='iconfont icon-jifenshangcheng '></text>积分商城
+    </navigator>
+    <navigator url='../message/message'>
+      <text class='iconfont icon-xiaoxi '></text>消息
+    </navigator>
+    <navigator url='setup/setup'>
+      <text class='iconfont icon-shezhi '></text>设置
+    </navigator>
+
+    <!-- 货主部分 -->
+    <!-- <navigator url='/pages/c_pages/receive/receiveHome/receiveHome'>
+      <text class="iconfont icon-auto"></text>收货管理
+    </navigator>
+
+    <navigator url='/pages/c_pages/deliver/deliverHome/deliverHome'>
+      <text class="iconfont icon-auto"></text>发货管理
+    </navigator>
+
+    <navigator url='/pages/c_pages/userSetting/userSetting'>
+      <text class="iconfont icon-auto"></text>用户设置
+    </navigator> -->
+
+  </view>
+  
+</view>

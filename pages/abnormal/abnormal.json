@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "异常签收确认",
+  "usingComponents": {
+    "app-canvas": "../../compontent/common/canvas/canvas"
+  }
+}

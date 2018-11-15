@@ -1,0 +1,64 @@
+<!--pages/c_pages/receive/receiveCom/receiveCom.wxml-->
+<view class='content'>
+<scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower">
+  <view class="card">
+    <view class="title">
+      <view class="til">运单号：
+        <text>123123</text>
+      </view>
+      <view class="adress">
+        <text>已签收</text>
+      </view>
+    </view>
+     <view class="xing">
+      <view class="left">
+        <view class='txt'>
+          <view class='msg'>
+            <text class='iconfont icon-yundan'></text>
+            <text class='place'>发货地：</text>
+            <text class='detailPlace'>天河天河天河天河天河天河天河天河天河天河天河天河天河</text>
+          </view>
+          <view class='msg'>
+            <text class='iconfont icon-weizhi'></text>
+            <text class='place'>签收地：</text>
+            <text class='detailPlace'>白云白云白云白云白云白云白云白云白云白云白云白云白云</text>
+          </view>
+          <view class='time'>
+            <text class='iconfont icon-shijian'></text>
+            <text class='planStart'>
+              <text>计划开始：</text>
+              <text class='date'>2018-12-10</text>
+            </text>
+             <!-- <text>实际开始
+              <text>2018-12-10</text>
+            </text>  -->
+          </view>
+          <view class='time'>
+            <text class='iconfont icon-shijian'></text>
+            <text class='planStart'>
+              <text>计划结束：</text>
+              <text class='date'>2018-12-12</text>
+            </text>
+            <!-- <text>实际结束
+              <text>未知</text>
+            </text> -->
+          </view>
+        </view>
+
+        <view class='info'>
+          <view class='info-number'>12件</view>
+          <view class='info-number'>12方</view>
+          <view class='info-number'>12吨</view>
+          <view class="yundan" bindtap="onChangeShowState">电子运单
+            <text class="iconfont icon-jiantou"></text>
+          </view>
+        </view>
+      </view>
+    </view> 
+  </view>
+</scroll-view>
+  <download class="hide{{showView?'show':''}}" bind:cancelEvent="_cancelEvent"></download>
+</view>
+
+
+

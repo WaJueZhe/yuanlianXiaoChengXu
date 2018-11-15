@@ -1,0 +1,49 @@
+<!--pages/c_pages/vehicle/vehicle.wxml-->
+<wxs module="filter" src="../../../filter/filter.wxs"></wxs>
+<view class="serch">
+  <view class="input">
+    <text class="iconfont icon-search"></text>
+    <input type="text" placeholder="请输入车牌号" value='{{searchStr}}' bindinput='setSearchStr'></input>
+  </view>
+  <view class='button' bindtap='searchVehicle'>查询</view>
+</view>
+<view class='groupContent'>
+  <view class="group" wx:for="{{list}}" wx:key="{{index}}">
+    <view class='groupBox' bindtap='choseVehicle' data-text='{{item}}'>
+      <view class="info">
+        <view class="name">车牌号：{{item.vehicleNo}}</view>
+        <view class="phone">
+          <text decode='{{true}}'>车&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：{{filter.getPriceFormat(item.vehicleType)}}</text>
+        </view>
+      </view>
+      <view class="info">
+        <view class="name">
+          <text decode='{{true}}'>车&nbsp;&nbsp;&nbsp;长：</text>
+          <text wx:if="{{item.length}}">{{item.length}}米</text>
+          <text wx:else>未知</text>
+        </view>
+        <view class="phone">牌照类型：{{filter.vehicleNumberTypeFilter(item.vehicleNumberType)}}</view>
+      </view>
+    </view>
+    <view class="group-btn" wx:if="{{inWayCard!='searchVehicle'}}">
+      <view class="btn-left" bindtap='compile' data-text='{{item}}'>
+        <text class="iconfont icon-bianji"></text>
+        编辑
+      </view>
+      <view class="btn-left" bindtap='delete' data-id="{{item.id}}">
+        <text class="iconfont icon-delete"></text>
+        删除</view>
+    </view>
+  </view>
+
+  <view class='nomore' wx:if="{{nomore}}">
+    <text>没有更多数据了</text>
+  </view>
+</view>
+
+
+
+
+<view class='add-btn'>
+  <navigator url='../addVehicle/addVehicle'>新增车辆</navigator>
+</view>

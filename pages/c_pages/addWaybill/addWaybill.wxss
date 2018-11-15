@@ -1,0 +1,290 @@
+/* pages/c_pages/addWaybill/addWaybill.wxss */
+@import "../../../css/icon-font/iconfont.wxss";
+.from {
+  width:100%;
+  box-sizing:border-box;
+}
+
+.from .group-item {
+  padding:0 40rpx;
+  margin-top:20rpx;
+  width:100%;
+  height:80rpx;
+  line-height:80rpx;
+  font-size:15px;
+  background-color: #fff;
+  box-sizing:border-box;
+  border-bottom:1px solid #ccc;
+}
+
+.from .group-item::after {
+  display:block;
+  clear: both;
+  content:' ';
+}
+
+.from .group-item .original {
+  float: left;
+  width:23%;
+  height:80rpx;
+}
+
+.from .group-item .input {
+  float: left;
+  width:67%;
+  height:76rpx;
+  font-size:15px;
+}
+
+.from .group-item .input > input {
+  width:100%;
+  height:100%;
+  font-size:15px;
+}
+
+.from .group-item .right {
+  float:right;
+  width:10%;
+  height:80rpx;
+  text-align:center;
+}
+
+.from .group-item .right > text {
+  font-size:23px;
+  font-weight:600;
+}
+
+.from .group-item .right > image {
+  width:46rpx;
+  height:46rpx;
+}
+
+.from .info-item {
+  margin-top:20rpx;
+  padding:0 20rpx;
+  width:100%;
+  background-color: #fff;
+  box-sizing:border-box;
+}
+
+.from .info-item:last-child > .info-left > iconfont {
+  color:red;
+}
+
+.from .info-item .info-left {
+  padding:20rpx 0;
+  width:100%;
+  border-bottom:1px solid #ccc;
+}
+
+.from .info-item .info-left::after {
+  display:block;
+  clear: both;
+  content:' ';
+}
+
+.from .info-item .info-left > iconfont {
+  font-size:40rpx;
+  color:#2166ff;
+  vertical-align:middle;
+}
+
+.from .info-item .info-left .name {
+  display: inline-block;
+  width:80%;
+  padding-left:10rpx;
+  font-size:15px;
+  color:#888;
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  vertical-align: middle;
+}
+
+.from .info-item .info-left .forwarding-unit {
+  float:right;
+  margin-top:-4rpx;
+  margin-right:20rpx;
+  width:55rpx;
+  height:55rpx;
+}
+
+.from .info-item .info-left .forwarding-unit > image {
+  width:100%;
+  height:100%;
+}
+
+.from .info-item .info-right {
+  width:100%;
+  height:80rpx;
+  line-height:80rpx;
+  font-size:15px;
+}
+
+.from .info-item .info-right > iconfont {
+  font-size:20px;
+  vertical-align:middle;
+}
+
+.from .info-item .info-right > text:last-child {
+  padding-left:10rpx;
+}
+
+.from .info-item .info-right .sendTime {
+  color:#888;
+}
+
+.from .body-view {
+  margin-top: 20rpx;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.from .switch-input {
+  border-top:1px solid #ccc;
+}
+
+.from .switch-input .group-item {
+    margin-top:0;
+}
+
+.switchShow {
+  display: block;
+}
+
+.switchHide {
+  display: none;
+}
+
+.from .cargo-msg {
+  margin-top:20rpx;
+  width:100%;
+  height:80rpx;
+  line-height:80rpx;
+  text-align:center;
+  font-size:15px;
+  background-color: #fff;
+}
+
+.from .cargo-msg navigator > image {
+  display: inline-block;
+  padding-right: 10rpx;
+  width:45rpx;
+  height:45rpx;
+  vertical-align: middle;
+}
+
+.from .msg-btn {
+  position: fixed;
+  bottom:20rpx;
+  left:0;
+  padding: 0 40rpx;
+  width:100%;
+  height:80rpx;
+  line-height:80rpx;
+  display:flex;
+  justify-content:space-between;
+  box-sizing: border-box;
+}
+
+.from .msg-btn .btn {
+  flex:1;
+  text-align:center;
+  background-color:#2166ff;
+  color:#fff;
+  font-size:16px;
+  border-radius:10rpx;
+}
+
+.from .msg-btn .btn:first-child {
+  margin-right:40rpx;
+}
+
+.from .group-box {
+  margin-top: 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #eee;
+  background-color: #fff;
+}
+
+.from .group-box .cargo-item {
+  flex: 1;
+  height:80rpx;
+  line-height:80rpx;
+  text-align:center;
+  font-size: 14px;
+  font-weight: bold;
+  border-right: 1px solid #eee;
+}
+
+.from .group-box .cargo-item:last-child {
+  border-right: none;
+}
+
+.from .group-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #eee;
+  background-color: #fff;
+}
+
+.from .group-text .text-item {
+  flex: 1;
+  height:80rpx;
+  line-height:80rpx;
+  text-align:center;
+  font-size: 14px;
+  border-right: 1px solid #eee;
+}
+
+.from .group-text .text-item > text{
+  float: right;
+  padding-right:20rpx;
+}
+
+.from .group-text .text-item:last-child {
+  border-right: none;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.section{  
+  padding: 20rpx;  
+  border-bottom: 1px solid #aaaaaa;  
+}  
+
+.pick_datetime {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width:100%;
+    overflow:hidden;
+}
+.pick_datetime_tool {
+    display:flex;
+    justify-content:space-between;
+    height:92rpx;
+    line-height:92rpx;
+    border-top:4rpx solid #eee;
+    border-bottom:4rpx solid #eee;
+    padding:0 20rpx;
+}
+.pick_datetime_ok {font-weight:bold;}
+.pick_datetime_clear {color:#666;}
+.pick_datetime picker-view {
+    font-size:34rpx;
+}
+.pick_datetime_column {
+    height:40px;
+    line-height:40px;
+    text-align:center;
+}

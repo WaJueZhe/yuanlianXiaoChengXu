@@ -1,0 +1,83 @@
+/* pages/set/set.wxss */
+
+.setContent {
+  width: 100%;
+}
+
+/* 顶部任务栏 */
+
+.setContent .heaerContent {
+  position: relative;
+  width: 100%;
+  height: 260rpx;
+}
+
+.setContent .heaerContent image {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.setContent .heaerContent>view{
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 15px;
+}
+
+/* 菜单栏 */
+
+.setContent .navList navigator {
+  display: block;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  margin-top: 1px;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.navList navigator text {
+  margin-right: 20rpx;
+}
+
+.setContent .cut {
+  position: fixed;
+  bottom:40rpx;
+  left:0;
+  width: 100%;
+  display:flex;
+  justify-content:space-between;
+  box-sizing:border-box;
+}
+
+.setContent .cut .driver {
+  flex:1;
+  text-align:center;
+  font-size: 14px;
+}
+
+.setContent .cut .driver navigator > i {
+  font-size: 30px;
+}
+
+.setContent .cut .owner {
+  flex:1;
+  text-align:center;
+  font-size: 14px;
+}
+
+.setContent .cut .owner navigator > i {
+  font-size: 30px;
+}
+.active {
+  color:blue;
+}

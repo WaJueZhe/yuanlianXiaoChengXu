@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "起运",
+  "usingComponents":{
+    "app-canvas":"../../../compontent/common/canvas/canvas"
+  }
+}

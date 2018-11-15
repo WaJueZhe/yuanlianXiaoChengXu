@@ -1,0 +1,183 @@
+
+function getPriceFormat(value) {
+  var ret = '';
+  switch (value) {
+    case "H01":
+      ret = "普通货车";
+      break;
+    case "H02":
+      ret = "厢式货车";
+      break;
+    case "H04":
+      ret = "罐式货车";
+      break;
+    case "Q00":
+      ret = "牵引车";
+      break;
+    case "G01":
+      ret = "普通挂车";
+      break;
+    case "G03":
+      ret = "罐式挂车";
+      break;
+    case "G05":
+      ret = "集装箱挂车";
+      break;
+    case "H09":
+      ret = "仓栅式货车";
+      break;
+    case "H03":
+      ret = "封闭货车";
+      break;
+    case "H05":
+      ret = "平板货车";
+      break;
+    case "H06":
+      ret = "集装箱车";
+      break;
+    case "H07":
+      ret = "自卸货车";
+      break;
+    case "H08":
+      ret = "特殊结构货车";
+      break;
+    case "Z00":
+      ret = "专项作业车";
+      break;
+    case "G02":
+      ret = "厢式挂车";
+      break;
+    case "G07":
+      ret = "仓栅式挂车";
+      break;
+    case "G04":
+      ret = "平板挂车";
+      break;
+    case "G06":
+      ret = "自卸挂车";
+      break;
+    case "G09":
+      ret = "专项作业挂车";
+      break;
+    case "X91":
+      ret = "车辆运输车";
+      break;
+    case "X92":
+      ret = "车辆运输车(单排)";
+      break;
+    default:
+      break;
+  }
+  return ret;
+}
+
+function vehicleNumberTypeFilter(val){
+  var result = "";
+  switch (val) {
+    case "1":
+      result = "大型号牌";
+      break;
+    case "2":
+      result = "小型号牌";
+      break;
+    case "99":
+      result = "其他号牌";
+      break;
+  }
+  return result;
+}
+
+function taskStatus(value){
+  var result = "";
+  switch (value) {
+    case "0":
+      result = "未接单";
+      break;
+    case "1":
+      result = "已接单";
+      break;
+    case "2":
+      result = "执行中";
+      break;
+    case "10":
+      result = "已完成";
+      break;
+    case "98":
+      result = "已拒绝";
+      break;
+    case "99":
+      result = "已取消";
+      break;
+  }
+  return result;
+}
+
+function shpStatus(value){
+  var result = "";
+  switch (value) {
+    case "0":
+      result = "已派车";
+      break;
+    case "0.5":
+      result = "已签发";
+      break;
+    case "1":
+      result = "在途";
+      break;
+    case "1.5":
+      result = "已到货";
+      break;
+    case "2":
+      result = "已签收";
+      break;
+    case "-1":
+      result = "已取消";
+      break;
+    case "-2":
+      result = "已终止";
+      break;
+  }
+  return result;
+}
+
+function expType(value){
+  var result = "";
+  switch (value) {
+    case 1:
+      return '货损';
+      break;
+    case 2:
+      return '货差';
+      break;
+    default:
+      return '其他'
+      break;
+  }
+  return result;
+}
+
+function exceptionName(value){
+  var result = "";
+  switch (value) {
+    case 1:
+      return '货损'
+      break;
+    case 2:
+      return '货差'
+    case '请选择':
+      return '请选择';
+    default:
+      return '其他'
+      break;
+  }
+  return result;
+}
+
+module.exports = {
+  getPriceFormat: getPriceFormat,
+  vehicleNumberTypeFilter: vehicleNumberTypeFilter,
+  taskStatus: taskStatus,
+  shpStatus: shpStatus,
+  expType: expType,
+  exceptionName: exceptionName
+}

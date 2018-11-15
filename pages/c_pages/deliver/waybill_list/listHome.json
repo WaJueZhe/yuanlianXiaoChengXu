@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "运单列表",
+  "navigationBarBackgroundColor": "#101a30",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#ccc",
+  "usingComponents": {
+    "app-tab-list": "../../../../compontent/c_compontent/receiveCard/receiveCard"
+  }
+}

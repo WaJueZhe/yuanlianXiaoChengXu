@@ -1,0 +1,59 @@
+<!--compontent/download/download.wxml-->
+<view class="download-page" >
+  <view class="download">
+    <view class="download-box">
+      <view class="download-list">
+        <view class="download-item">
+          <view class="item-top">
+            <image src="../../img/u316.png"></image>
+          </view>
+          <view class="item-text">到邮件</view>
+        </view>
+        <view class="download-item">
+          <view class="item-top">
+            <image src="../../img/u317.png"></image>
+          </view>
+          <view class="item-text">到微信</view>
+        </view>
+        <view class="download-item">
+          <view class="item-top">
+            <image src="../../img/u318.png"></image>
+          </view>
+          <view class="item-text">到QQ</view>
+        </view>
+        <view class="download-item">
+          <view class="item-top">
+            <image src="../../img/u319.png"></image>
+          </view>
+          <view class="item-text">直接查看</view>
+        </view>
+      </view>
+      <view class="Email">
+        <text class='el'>Email：</text>
+        <input type="text"></input>
+        <text class="send">发送</text>
+      </view>
+      <!-- <view v-show="isIllegal" class="illegal">邮箱地址不合法</view> -->
+      <view class="cancle" catchtap='_cancelEvent'>取消</view>
+      <!-- <view class="cancle" @click="cancel">取消</view> -->
+    </view>
+  </view>
+  <!-- <view class="share" v-show="shareBox">
+    <i class="iconfont icon-skip"></i>
+    <view class="share-title">
+      <i class="iconfont icon-close" @click="shareBox = false"></i>
+      点击分享应用
+    </view>
+    <view class="info">
+      <view class="number">1</view>
+      <view class="text">点击右上角的
+        <text class="more">···</text>按钮 </view>
+    </view>
+    <view class="info">
+      <view class="number">2</view>
+      <view class="text">选择
+        <text>“{{sendWay}}”</text>
+      </view>
+    </view>
+  </view> -->
+</view>

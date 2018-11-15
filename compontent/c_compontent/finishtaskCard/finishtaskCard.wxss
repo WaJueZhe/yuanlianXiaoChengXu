@@ -1,0 +1,174 @@
+/* compontent/c_compontent/finishtaskCard/finishtaskCard.wxss */
+@import "../../../css/icon-font/iconfont.wxss";
+
+.taskCard {
+  position: relative;
+  margin-left: 64rpx;
+  width: 660rpx;
+  box-shadow: 0rpx 2rpx 2rpx #ccc;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+}
+
+.taskCard::after {
+  position: absolute;
+  top:46rpx;
+  left: -35rpx;
+  content: '';
+  width: 4rpx;
+  height: 100%;
+  background: linear-gradient(#2166ff, #21cdff);
+}
+
+.taskCard .number {
+  position: absolute;
+  top: 0;
+  left: -56rpx;
+}
+
+.taskCard .number .tihuo {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 36rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 4rpx solid #2166ff;
+  color: #2166ff;
+}
+
+.taskCard .number .xiehuo {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 36rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 4rpx solid #f68622;
+  color: #f68622;
+}
+
+.taskCard .title {
+  height: 70rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  line-height: 70rpx;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 0 20rpx;
+  background-color: #2166ff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.taskCard .title::after {
+  display: block;
+  clear: both;
+  content: ' ';
+}
+
+.taskCard .title > text:last-child {
+  float: right;
+  margin-right: 24rpx;
+  font-size: 13px;
+}
+
+.taskCard .cargo {
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  height: 70rpx;
+  line-height: px2rem(70px);
+  color: cardcol;
+  font-size: 20px;
+  padding: 0 20rpx;
+  background-color: #f68622;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.taskCard .cargo > text:last-child {
+  float: right;
+  margin-right: 24rpx;
+  font-size: 13px;
+}
+
+.taskCard .detail {
+  height: 220rpx;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.taskCard .detail .address {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin-left: 20rpx;
+  width: 140rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  text-align: center;
+  background-color: #404550;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 50%;
+}
+
+.taskCard .detail .tail {
+  position: absolute;
+  top: 50%;
+  left: 180rpx;
+  transform: translateY(-50%);
+  font-size: 15px;
+}
+
+.taskCard .detail .tail .dingwei {
+  margin-bottom: 10rpx;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.taskCard .detail .tail .dingwei:last-child {
+  margin-bottom: 0;
+}
+
+
+.taskCard .detail .tail .dingwei > text:first-child {
+  float: left;
+  width: 10%;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.taskCard .detail .tail .dingwei .name {
+  width: 90%;
+  float: right;
+}
+
+.taskCard .detail .msg-number > view {
+  display: inline-block;
+  margin-right: 10rpx;
+  border: 1px solid #ccc;
+  padding: 4rpx;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+}
+
+.taskCard .tain {
+  width: 100%;
+  height: 82rpx;
+  line-height: 82rpx;
+  font-size: 14px;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  border-top: 1px solid #ececec;
+}
+
+.taskCard .tain .text {
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: #383838;
+  box-sizing: border-box;
+}

@@ -1,0 +1,12 @@
+<!--pages/home/taskDetail/taskDetail.wxml-->
+<scroll-view class='detailContent'>
+  <!-- 状态栏 -->
+  <app-detail status="{{statusPage}}"></app-detail>
+  <!-- 卡片视图 -->
+  <app-card cardList="{{taskList}}"></app-card>
+
+  <view class='content-bottom'>
+    <button bindtap='noTask'>拒绝</button>
+    <button bindtap='yesTask'>接单</button>
+  </view>
+</scroll-view>

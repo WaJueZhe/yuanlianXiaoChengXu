@@ -1,0 +1,47 @@
+<!--pages/practical/practical.wxml-->
+<wxs module="filter" src="../../filter/filter.wxs"></wxs>
+<view class='abnormal'>
+  <text class='abnormal-tit'>习蓓/13512345678</text>
+  <text class="iconfont icon-zengjia" bindtap='addText'></text>
+</view>
+
+<view class='group-box'>
+  <view class='group'>
+    <view class='group-tit'>货物名称</view>
+    <view class='group-tit'>编码</view>
+    <view class='group-tit'>数量</view>
+    <view class='group-tit'>异常类型</view>
+    <view class='group-tit'></view>
+  </view>
+
+  <view class='group' wx:for="{{list}}" wx:key="{{index}}">
+    <view class='group-tit'>
+       <input type='text' placeholder='货物名称' value='{{item.itemName}}' bindinput='setItemName'></input> 
+    </view>
+    <view class='group-tit'>
+       <input type='text' placeholder='编码' value='{{item.itemCode}}' bindinput='setItemCode'></input> 
+    </view>
+    <view class='group-tit'>
+       <input type='number' placeholder='数量' value='{{item.quantity}}' bindinput='setQuantity'></input> 
+    </view>
+    <view class='group-tit' bindtap='selectBox' data-index='{{index}}'>{{filter.exceptionName(item.exceptionType) || '请选择'}}</view>
+    <view class='group-tit' bindtap='delText' data-index='{{index}}'><text class="iconfont icon-iconset0187"></text></view>
+  </view>
+</view>
+
+<view class='character-text'>
+  <textarea placeholder="异常信息描述" maxlength="{{noteMaxLen}}" bindinput="bindWordLimit"></textarea>
+  <view class="sum">{{currentNoteLen|0}}/{{noteMaxLen}}</view>
+</view>
+
+<view class='btn'>
+  <view class='btn-confirm'>确定</view>
+  <view class='btn-confirm'>拍照留证</view>
+</view>
+
+<view class="modal-box" hidden='{{modalBox}}'>
+  <view class='zzc' bindtap='choiceBox'></view>
+  <view class="modal-list">
+    <view class="modal-item" wx:for="{{arr}}" wx:key="{{index}}" data-text='{{item}}' bindtap='description'>{{item}}</view>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<!--compontent/history/historyDetailCard/historyDetailCard.wxml-->
+<scroll-view class='cardContent'>
+  <view class='card' wx:for="{{historyCard}}" wx:key="{{index}}">
+    <!-- 提货标题栏 -->
+    <view class='title pick' wx:if="{{item.stopType=='D'}}">
+      <text>提货</text>
+      <text>实际提货时间：{{item.actualDate}}</text>
+      <view class='{{item.number==item.historylength?"numberline":""}}'>{{item.number}}</view>
+    </view>
+    <!-- 卸货标题栏 -->
+    <view class='title cargo' wx:if="{{item.stopType=='U'}}">
+      <text>卸货</text>
+      <text>实际卸货时间：{{item.actualDate}}</text>
+      <view class='{{item.number==item.historylength?"numberline":""}}'>{{item.number}}</view>
+    </view>
+
+    <view class='main'>
+      <view>{{item.cityName}}</view>
+      <view>
+        <view>
+          <text class='iconfont icon-dingwei'></text> {{item.cityName}}{{item.street}}
+        </view>
+        <view class='detail'>
+          <text>{{item.totalUnits}}{{item.unitUnit}}</text>
+          <text>{{item.totalVolume}}{{item.volumenUnit}}</text>
+          <text>{{item.totalWeight}}{{item.weightUnit}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='main-bottom'>
+      签收时间：{{item.signTime}}
+    </view>
+  </view>
+</scroll-view>

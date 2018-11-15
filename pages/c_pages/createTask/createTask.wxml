@@ -1,0 +1,119 @@
+<!--pages/c_pages/createTask/createTask.wxml-->
+<view class='CreateTask'>
+  <view class="group">
+    <view class="group-item">
+      <view class="original">原始单号：</view>
+      <view class="input">
+        <input type="text" placeholder="原始任务单号（选填）" value='{{task.referId}}' bindinput='setNumbers'></input>
+      </view>
+      <view class="right">
+        <text class="iconfont icon-chadan" bindtap='scanNo'></text>
+      </view>
+    </view>
+
+    <view class="group-item" bindtap='chooseDepartment' wx:if="{{identityType == 'pcuser'}}">
+      <view class="original">
+        <text style="color:red">*</text>部门：</view>
+      <view class="inputBox">
+        <view wx:if="{{departmentName}}">{{departmentName}}</view>
+        <view class='choose' wx:else>选择部门</view>
+      </view>
+      <view class="right">
+        <view class='image'>
+          <image src='../../../img/deptuser.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="group-item">
+      <view class="original">
+        <text style="color:red">*</text>司机：</view>
+        <view class="inputBox" bindtap='choseDriver'>
+          <view wx:if="{{task.driverName}}">{{task.driverName}}</view>
+          <view class='choose' wx:else>司机相关信息</view>
+        </view>
+        <view class="right">
+          <view class='image'>
+            <image src='../../../img/u2183.png'></image>
+          </view>
+        </view>
+    </view>
+
+    <view class="group-item">
+      <view class="original">
+        <text style="color:red">*</text>车辆：</view>
+        <view class="inputBox" bindtap='choseVehicle'>
+          <view wx:if="{{task.vehicleNo}}">{{task.vehicleNo}}</view>
+          <view class='choose' wx:else>车辆相关信息</view>
+        </view>
+        <view class="right">
+          <view class='image'>
+            <image src='../../../img/u2188.png'></image>
+          </view>
+        </view>
+    </view>
+
+  </view>
+
+  <view class="newAdd">
+    <navigator url='../addWaybill/addWaybill' hover-class="none">
+      <text decode="{{true}}">[ &nbsp;&nbsp;&nbsp; + 新增运单 &nbsp;&nbsp;&nbsp; ]</text>
+    </navigator>
+  </view>
+
+  <view class="from-btn" bindtap='setUp'>创建</view>
+
+  <view class="from-group" wx:for="{{task.shipmentList}}" wx:key="{{index}}">
+    <view class="item-title">
+      <view class="title-left">To:{{item.unloadCompany}}</view>
+      <view class="title-right">
+        <text class="iconfont icon-bianji" bindtap='compile' data-index="{{index}}" data-text="{{item}}"></text>
+        <i class="iconfont icon-delete" bindtap='remove' data-index="{{index}}"></i>
+      </view>
+    </view>
+    <view class="from-item">
+      <view class="item-left">
+        <text class="iconfont icon-fa"></text>
+        <text class="deliver-place">发货地：</text>
+      </view>
+      <view class="item-right">{{item.deliverFullAddress}}</view>
+    </view>
+    <view class="from-item">
+      <view class="item-left">
+        <text class="iconfont icon-zhong"></text>
+        <text class="deliver-place">签收地：</text>
+      </view>
+      <view class="item-right">{{item.unloadFullAddress}}</view>
+    </view>
+    <view class="from-item">
+      <view class="item-left">
+        <text class="iconfont icon-shijian"></text>
+        <text class="deliver-place">开始时间：</text>
+        <view class="finish-time">结束时间：</view>
+      </view>
+      <view class="item-right">{{item.deliverPlanDate}}</view>
+      <view class="item-right">{{item.unloadPlanDate}}</view>
+    </view>
+    <view class="from-item">
+      <view class="item-left">
+        <text class="iconfont icon-lishirenwu"></text>
+        <text class="deliver-place">货物：</text>
+      </view>
+      <view class="item-msg">{{item.tempTotalDesc}}</view>
+      <view class="number">{{item.tempTotalCount}}件</view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 部门选择弹框 -->
+<view class="modal-box hide{{showView?'show':''}}" bindtap='cancleModal'>
+  <view class="modal-list">
+    <view class="modal-tit">请选择部门</view>
+    <view class="modal-item" wx:for="{{deptarr}}" wx:key="index" data-id='{{item.id}}' data-text='{{item.departmentName}}' bindtap='choseDept'>{{item.departmentName}}</view>
+  </view>
+  <view class="modal-list">
+    <view class="modal-tit">请选择部门</view>
+    <view class="modal-item" wx:for="{{deptarr}}" wx:key="index" data-id='{{item.id}}' data-text='{{item.departmentName}}' bindtap='choseDept'>{{item.departmentName}}</view>
+  </view>
+</view>

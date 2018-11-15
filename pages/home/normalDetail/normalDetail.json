@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "任务详情",
+  "usingComponents": {
+    "app-task-detail": "../../../compontent/home/detail/detail",
+    "app-normal-card": "../../../compontent/home/normalDetailCard/normalDetailCard"
+  }
+}

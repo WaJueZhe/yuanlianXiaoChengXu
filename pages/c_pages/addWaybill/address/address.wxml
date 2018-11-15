@@ -1,0 +1,3 @@
+<lodingAddress isChoose="{{isChoose}}" class="{{num ==1 ?'show':'hide'}}"></lodingAddress>
+
+<unloadAddress isChoose="{{isChoose}}" class="{{num ==2 ?'show':'hide'}}"></unloadAddress> 

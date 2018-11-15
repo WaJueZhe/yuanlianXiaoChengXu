@@ -1,0 +1,73 @@
+<!--compontent/c_compontent/unloadAddress/unloadAddress.wxml-->
+<!-- <view class='shipment' wx:if="{{unload}}">装货</view> -->
+<view class="serch">
+  <view class="input">
+    <i class="iconfont icon-search"></i>
+    <input type="text" placeholder="请输入地址编码" value='{{searchKey}}' bindinput='setSearchKey'></input>
+  </view>
+  <view class='button' bindtap='inquire'>查询</view>
+</view>
+
+<scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="scrollToLower">
+  <view style='padding-bottom:40rpx;'>
+    <view class="group" wx:for="{{addressList}}" wx:key="{{index}}">
+      <view wx:if="{{isChoose}}" class='groupBox' bindtap='selectUnload' data-text='{{item}}'>
+        <view class="code">编码：{{item.addressCode}}</view>
+        <view class="info">
+          <view class="name">
+            <text class="iconfont icon-dianhua1"></text>{{item.currentContactPerson}} / {{item.currentContactMobile}}</view>
+        </view>
+        <view class="company-name">
+          <view class="left">
+            <text class="iconfont icon-shouyed"></text>
+          </view>
+          <view class="right">{{item.addressName}}</view>
+        </view>
+        <view class="company-name">
+          <view class="left">
+            <text class="iconfont icon-dingwei"></text>
+          </view>
+          <view class="right">{{item.provinceName}}{{item.cityName}}{{item.districtName}}{{item.street}}</view>
+        </view>
+      </view>
+
+      <view wx:if="{{!isChoose}}" class='groupBox' data-text='{{item}}'>
+        <view class="code">编码：{{item.addressCode}}</view>
+        <view class="info">
+          <view class="name">
+            <text class="iconfont icon-dianhua1"></text>{{item.currentContactPerson}} / {{item.currentContactMobile}}</view>
+        </view>
+        <view class="company-name">
+          <view class="left">
+            <text class="iconfont icon-shouyed"></text>
+          </view>
+          <view class="right">{{item.addressName}}</view>
+        </view>
+        <view class="company-name">
+          <view class="left">
+            <text class="iconfont icon-dingwei"></text>
+          </view>
+          <view class="right">{{item.provinceName}}{{item.cityName}}{{item.districtName}}{{item.street}}</view>
+        </view>
+      </view>
+
+      <view wx:if="{{!isChoose}}" class="group-btn">
+        <view class="btn-left" bindtap='compile' data-text='{{item}}'>
+            <text class="iconfont icon-bianji"></text>
+            编辑
+        </view>
+        <view class="btn-left"  bindtap='delet' data-id="{{item.id}}">
+          <text class="iconfont icon-delete"></text>
+          删除</view>
+      </view>
+    </view>
+
+    <view class='nomore' wx:if="{{nomore}}">
+      <text>没有更多数据了</text>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="add-address">
+  <navigator url='/pages/c_pages/addAddress/addAddress'>新增地址</navigator>
+</view>

@@ -1,0 +1,89 @@
+<!--pages/set/setup/setup.wxml-->
+<view class='setContent'>
+  <view class='header-Content'>
+    <view class='photo' bindtap='togglePhoto'>
+      <text>头像</text>
+      <text class="iconfont icon-jiantou"></text>
+      <image src='{{imgSrc}}'></image>
+    </view>
+
+    <view class='user' bindtap='setuseName'>
+      <text>姓名</text>
+      <text class="iconfont icon-jiantou"></text>
+      <text>{{userInfo.driverName}}</text>
+    </view>
+
+    <view class='gender' bindtap='toggleGender'>
+      <text>性别</text>
+      <text class="iconfont icon-jiantou"></text>
+      <text wx:if="{{userInfo.driverSex==1}}">男</text>
+      <text wx:if="{{userInfo.driverSex==2}}">女</text>
+    </view>
+  </view>
+
+  <view class='main-Content'>
+    <view class='catCode'>
+      <text>驾驶证</text>
+      <text>{{userInfo.driver_license_number}}</text>
+    </view>
+    <view class='phone'>
+      <text>手机号码</text>
+      <text>{{userInfo.driverMobile}}</text>
+    </view>
+    <view class='IDcard'>
+      <text>身份证号</text>
+      <text>{{userInfo.driverIdentityId}}</text>
+    </view>
+  </view>
+
+  <button bindtap='backLogin'>退出登录</button>
+</view>
+
+<view class='cut' wx:if="{{isCuser}}">
+  <view class="driver">
+      <i class="iconfont icon-auto"></i>
+      <view>我是司机</view>
+  </view>
+  <view class="owner" bindtap="changeIdentity">
+      <i class="iconfont icon-auto"></i>
+      <view>我是货主</view>
+  </view>
+</view>
+
+<!-- 选择性别弹框 -->
+<view class='selectGender' hidden='{{genderShow}}'>
+  <view class='zezhao' bindtap='toggleGender'></view>
+  <view class='gender'>
+    <view>性别</view>
+    <radio-group bindchange="setGender" wx:if="{{userInfo.driverSex==1}}">
+      <view>
+        <radio value='1' checked='{{true}}' bindtap='toggleGender'></radio>
+        <text>男</text>
+      </view>
+      <view>
+        <radio value='2' bindtap='toggleGender'></radio>
+        <text>女</text>
+      </view>
+    </radio-group>
+    <radio-group bindchange="setGender" wx:if="{{userInfo.driverSex==2}}">
+      <view>
+        <radio value='1' bindtap='toggleGender'></radio>
+        <text>男</text>
+      </view>
+      <view>
+        <radio value='2' checked='{{true}}' bindtap='toggleGender'></radio>
+        <text>女</text>
+      </view>
+    </radio-group>
+  </view>
+</view>
+
+<!-- 上传头像弹框 -->
+<view class='choosePhoto' hidden='{{photoShow}}'>
+  <view class='zezhao' bindtap='togglePhoto'></view>
+  <view class='selet'>
+    <view bindtap='camerauser'>拍照</view>
+    <view bindtap='getPhotouser'>请从手机相册选择</view>
+  </view>
+  <view class='remove' bindtap='togglePhoto'>取消</view>
+</view>

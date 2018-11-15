@@ -1,0 +1,85 @@
+<!--pages/c_pages/createHistoryDetail/createHistoryDetail.wxml-->
+<wxs module="filter" src="../../../filter/filter.wxs"></wxs>
+<view class="status">
+  <view class='infoBox'>
+    <view class='infoBox-left'>
+      <text>状态：</text>
+      <text class='orders'>{{filter.taskStatus(bsTask.status)}}</text>
+    </view>
+    <view class='infoBox-left'>
+      <text>联系人：</text>
+      <text>
+        <text class='iconfont icon-dianhua1'></text>
+      <text class='name'>{{bsTask.createByName}}</text>
+      </text>
+    </view>
+  </view>
+  <view class='message'>
+    <view class='message-l'>
+      <text class='iconfont icon-shi'></text>
+      <text class='data'>{{deliverPlanDate}}</text>
+    </view>
+    <image src='../../../img/inc_Arrow.png'></image>
+    <view class='message-r'>
+      <text class='iconfont icon-zhong'></text>
+      <text class='data'>{{unloadPlanDate}}</text>
+    </view>
+  </view>
+  <view class='remark'>备注：{{bsTask.taskDesc}}</view>
+</view>
+
+<view class='checkContent'>
+  <view class="taskCard" wx:for="{{list}}" wx:key="{{index}}">
+    <!-- 数字视图 -->
+    <view class="number">
+      <!-- 提货数字栏 -->
+      <view class="tihuo" wx:if="{{item.stopType=='D'}}">{{index+1}}</view>
+      <!-- 卸货数字栏 -->
+      <view class="xiehuo" wx:if="{{item.stopType=='U'}}">{{index+1}}</view>
+    </view>
+    <!-- 提货标题栏 -->
+    <view class="title pick" wx:if="{{item.stopType=='D'}}">
+      <text>提货</text>
+      <text wx:if="{{item.actualDate}}">实际提货时间：{{item.actualDate}}</text>
+      <text wx:if="{{!item.actualDate}}">未到提货点</text>
+    </view>
+    <!-- 卸货标题栏 -->
+    <view class="title cargo" wx:if="{{item.stopType=='U'}}">
+      <text>卸货</text>
+      <text wx:if="{{item.actualDate}}">实际提货时间：{{item.actualDate}}</text>
+      <text wx:if="{{!item.actualDate}}">未到提货点</text>
+    </view>
+    <!-- 卡片信息 -->
+    <view class="detail">
+      <view class="address">{{item.cityName}}</view>
+      <view class="tail">
+        <view class='dingwei'>
+          <text class='iconfont icon-dingwei'></text>
+          <text class='name'>{{item.cityName}}-{{item.street}}</text>
+        </view>
+        <view class='dingwei' wx:if="{{item.paidDriverAmount>0&&item.stopType=='U'}}">
+          <text class='iconfont icon-qian'></text>
+          <text class='name'>代收货款￥{{item.paidDriverAmount}}</text>
+        </view>
+
+        <view class='msg-number'>
+          <view>{{item.totalUnits}}{{item.unitUnit}}</view>
+          <view>{{item.totalVolume}}{{item.volumeUnit}}</view>
+          <view>{{item.totalWeight}}{{item.weightUnit}}</view>
+        </view>
+
+      </view>
+    </view>
+    <view class="tain">
+      <text wx:if="{{useSign=='Y'&&item.signTime&&item.stopType=='D'}}">签发时间:{{item.signTime}}</text>
+      <text wx:if="{{useSign=='Y'&&item.signTime&&item.stopType=='U'}}">签收时间:{{item.signTime}}</text>
+      <text wx:if="{{useSign=='Y'&&!item.signTime&&item.stopType=='D'}}">尚未签发</text>
+      <text wx:if="{{useSign=='Y'&&!item.signTime&&item.stopType=='U'}}">尚未签收</text>
+      <text wx:if="{{useSign=='N'}}">该任务是免签任务</text>
+    </view>
+  </view>
+</view>
+
+<view class='nomore' wx:if="{{nomore}}">
+  <text>没有更多数据了</text>
+</view>

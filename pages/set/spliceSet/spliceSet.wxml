@@ -1,0 +1,5 @@
+<!--pages/set/spliceSet/spliceSet.wxml-->
+<view class='setContent'>
+  <input type='text' placeholder='请输入你的用户名' value='{{userName}}' bindinput="setUser"></input>
+  <button bindtap='saveUser'>保存</button>
+</view>

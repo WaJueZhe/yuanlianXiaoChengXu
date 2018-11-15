@@ -1,0 +1,80 @@
+<!--compontent/home/task/task.wxml-->
+<!-- 新任务 -->
+
+<view class='newContent'>
+<!-- 这就是刷新标志 -->
+  
+  <!-- <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="scrollToLower" bindscrolltoupper="scrollToUpper" scroll-top="{{scrollTop}}"> -->
+  
+  
+    <!-- <view class='info-box'>
+      <view class='notice-img'><image src='../../../img/notice-1.png'></image></view>
+      <view class='txt' bindtap='announcement'>
+        <view class='tet'>看似简单来看待是否能</view>
+      </view>
+    </view> -->
+
+    <!-- 这就是信息轮播 -->
+        <!-- <view class='info-box'>
+          <view class='notice-img'><image src='../../../img/notice-1.png'></image></view>
+          <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}"  class="swiper" vertical="true">
+        
+          <block wx:for="{{imgUrls}}" wx:key="unique">
+            <swiper-item>
+             <view class='txt' bindtap='announcement'>
+                <view class='tet'>{{item}}</view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class='img' bindtap='refresh'><image src='../../../img/refresh-1.png'></image></view>
+      </view>   -->
+
+
+
+    <view class='card' wx:for="{{taskList}}" wx:key="{{index}}">
+      <view class='title'>
+        <text>任务{{item.cnumber}}</text>
+        <text>距你{{item.alldistance}}公里</text>
+        <text class="iconfont icon-dingwei1"></text>
+      </view>
+      <!-- 卡片视图主题内容 -->
+      <view class='card-main'>
+        <!-- 卡片视图顶部 -->
+        <view class='main-top'>
+          <view class='main-top-left'>
+            <view>
+              <text class='iconfont icon-yundan'></text>
+              <text>站点数量：<text>{{item.stopCount}}</text></text>
+            </view>
+            <view>
+              <text class='iconfont icon-shijian'></text>
+              <text>开始时间：<text>{{item.deliverPlanDate}}</text></text>
+            </view>
+            <view>
+              <text class='iconfont icon-weizhi'></text>
+              <text>任务里程：<text>大约{{item.totalDistance}}{{item.distanceUnit}}</text></text>
+            </view>
+          </view>
+          <view class='main-top-right' bindtap='takeTask' id='{{item.id}}'>接单</view>
+        </view>
+        <!-- 卡片视图中部 -->
+        <view class='main-middle'>
+          <text>{{item.totalUnits}}{{item.unitUnit}}</text>
+          <text>{{item.totalVolume}}{{item.volumeUnit}}</text>
+          <text>{{item.totalWeight}}{{item.weightUnit}}</text>
+          <view class='line'></view>
+        </view>
+        <!-- 卡片视图底部 -->
+        <view class='main-bottom'>
+          <navigator url='../taskDetail/taskDetail?taskid={{item.id}}'>查看详情
+            <text class='class="iconfont icon-jiantou"'></text>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class='nomore' wx:if="{{nomore}}">
+      <text>没有更多数据了</text>
+    </view>
+  <!-- </scroll-view> -->
+</view>

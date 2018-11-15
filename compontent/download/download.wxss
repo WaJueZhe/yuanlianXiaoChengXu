@@ -1,0 +1,108 @@
+/* compontent/download/download.wxss */
+.download {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,.5);
+  z-index:99999;
+}
+
+.download .download-box {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:90%;
+  background-color: #fff;
+  border-radius:10rpx;
+  box-sizing:border-box;
+  z-index:4444;
+}
+
+.download .download-box .Email {
+  padding:30rpx;
+  font-size:15px;
+  box-sizing:border-box;
+}
+
+.download .download-box .Email::after {
+  display:block;
+  clear: both;
+  content: ' ';
+}
+
+.download .download-box .Email .el {
+  float: left;
+}
+
+.download .download-box .Email > input {
+  float: left;
+  padding-left:10rpx;
+  width:400rpx;
+  height:60rpx;
+  border:2rpx solid #ccc;
+}
+
+.download .download-box .Email .send {
+  float: left;
+  padding:15rpx;
+  background-color:#2196F3;
+  color:#fff;
+}
+
+.download .download-box .illegal {
+  margin-left:100rpx;
+  margin-top:-20rpx;
+  padding: 0 30rpx 30rpx 30rpx;
+  font-size:15px;
+  box-sizing:border-box;
+  color:red;
+}
+
+.download .download-box .download-list {
+  padding:30rpx;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  box-sizing:border-box;
+}
+
+.download .download-box .download-list .download-item {
+  flex:1;
+  margin-right:20rpx;
+  width:25%;
+  text-align:center;
+}
+
+.download .download-box .download-list .download-item:last-child {
+  margin-right:0;
+}
+
+.download .download-box .download-list .download-item .item-top {
+  margin:auto;
+  width:110rpx;
+  height:110rpx;
+  border-radius:50%;
+}
+
+.download .download-box .download-list .download-item .item-top > image {
+  width:100%;
+  height:100%;
+}
+
+.download .download-box .download-list .download-item .item-text {
+  padding-top:20rpx;
+  font-size:28rpx;
+  color:#666;
+}
+
+.download .download-box .cancle {
+  width:100%;
+  height:90rpx;
+  line-height:90rpx;
+  text-align:center;
+  font-size:28rpx;
+  border-top:1px solid #ccc;
+}

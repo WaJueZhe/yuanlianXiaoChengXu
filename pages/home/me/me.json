@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "首页",
+  "navigationBarBackgroundColor": "#101a30",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#ccc",
+  "usingComponents": {
+    "app-tab-bar": "../../../compontent/common/header/header",
+    "app-new-card": "../../../compontent/home/task/task",
+    "app-check-card": "../../../compontent/home/check/check",
+    "app-normal-card":"../../../compontent/home/normal/normal"
+  }
+}

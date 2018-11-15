@@ -1,0 +1,10 @@
+<!--compontent/common/header/header.wxml-->
+<view class='content-header' display-multiple-items="3">
+  <!-- <swiper-item bindtap='onTap' class='{{actived==1?"active":""}}' id='1'>新任务</swiper-item>
+  <swiper-item bindtap='onTap' class='{{actived==2?"active":""}}' id='2'>配送中</swiper-item>
+  <swiper-item bindtap='onTap' class='{{actived==3?"active":""}}' id='3'>异常单</swiper-item>
+  <swiper-item bindtap='onTap' class='{{actived==4?"active":""}}' id='4'>历史任务</swiper-item> -->
+  <view bindtap='onTap' class='{{actived==1?"active":""}}' id='1'>新任务</view>
+  <view bindtap='onTap' class='{{actived==2?"active":""}}' id='2'>配送中</view>
+  <view bindtap='onTap' class='{{actived==3?"active":""}}' id='3'>异常单</view>
+</view>

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "download":"../../../../compontent/download/download"
+  }
+}

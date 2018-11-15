@@ -1,0 +1,32 @@
+<!--pages/c_pages/receiveMessage/receiveMessage.wxml-->
+<!--compontent/c_compontent/receiveMessage/receiveMessage.wxml-->
+<view class="receiveMessage">
+  <view class="message">
+    <view class="name"><text>*</text>名称：</view>
+    <view class="input">
+      <input maxlength="25" type="text" value='{{item.unitDesc}}' placeholder="请输入货物的名称" bindinput="setName"></input>
+    </view>
+  </view>
+  <view class="message">
+    <view class="name"><text>*</text>件数：</view>
+    <view class="input">
+      <input type="number" value='{{item.plannedUnits}}' placeholder="请输入货物的件数" bindinput="setQuantity"></input>
+    </view>
+  </view>
+  <view class="message">
+    <view class="name"><text>*</text>体积：</view>
+    <view class="input">
+      <input type="digit" value='{{item.plannedVolume}}' placeholder="请输入货物的体积（方）" bindinput="setVolume"></input>
+    </view>
+  </view>
+  <view class="message">
+    <view class="name"><text>*</text>重量：</view>
+    <view class="input">
+      <input type="digit" value='{{item.plannedWeight}}' placeholder="请输入货物的重量（吨）" bindinput="setWeight"></input>
+    </view>
+  </view>
+  <view class="msg-btn">
+    <view class="btn" catchtap='cancle'>取消</view>
+    <view class="btn {{ item.unitDesc != '' && item.plannedUnits != '' && item.plannedVolume != '' &&  item.plannedWeight !='' ? 'active' : ''}}" catchtap='confirm'>确定</view>
+  </view>
+</view>

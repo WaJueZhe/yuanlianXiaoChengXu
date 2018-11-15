@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "签收列表",
+  "navigationBarBackgroundColor": "#101a30",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#ccc",
+  "usingComponents": {
+    "app-receive-list": "../../../../compontent/c_compontent/receiveCard/receiveCard"
+  }
+}

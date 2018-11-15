@@ -1,0 +1,34 @@
+<!--pages/home/startTask/startTask.wxml-->
+<view class='startContent'>
+  <view class='header-content'>
+    <image wx:if="{{driverinf.driverPic}}" src='{{resourceurl+driverinf.driverPic}}'></image>
+    <image wx:if="{{!driverinf.driverPic}}" src='../../../img/headimg.jpg'></image>
+    <view>
+      <view>车牌号：{{taskInf.vehicleNo}}</view>
+      <view>司机：{{driverinf.driverName}}</view>
+      <view>手机：{{driverinf.driverMobile}}</view>
+    </view>
+  </view>
+  <view class='header-table'>
+    <view class='table-title'>
+      <view>始发地</view>
+      <view>货物类型</view>
+      <view>计划发货</view>
+      <view>实际发货</view>
+    </view>
+    <view class='table-main' wx:for="{{unitList}}" wx:key="{{index}}">
+      <view>{{stopInf.cityName}}</view>
+      <view>{{item.unitDesc}}</view>
+      <view>{{item.plannedUnits}}{{taskInf.unitUnit}}{{item.plannedVolume}}{{taskInf.volumeUnit}}{{item.plannedWeight}}{{taskInf.weightUnit}}</view>
+      <view wx:if="{{item.actualUnits==item.plannedUnits}}">{{item.actualUnits}}{{taskInf.unitUnit}}{{item.actualVolume}}{{taskInf.volumeUnit}}{{item.actualWeight}}{{taskInf.weightUnit}}</view>
+      <view style="color:red;font-weight:bold" wx:if="{{item.actualUnits!=item.plannedUnits}}">{{item.actualUnits}}{{taskInf.unitUnit}}{{item.actualVolume}}{{taskInf.volumeUnit}}{{item.actualWeight}}{{taskInf.weightUnit}}</view>
+    </view>
+  </view>
+  <view class='middle-people'>发货人姓名：{{ username }}</view>
+
+  <!-- 签名版 -->
+  <view class='writeName'>
+    <app-canvas stopId="{{stopId}}" fahuo="{{fahuo}}"></app-canvas>
+  </view>
+  
+</view>

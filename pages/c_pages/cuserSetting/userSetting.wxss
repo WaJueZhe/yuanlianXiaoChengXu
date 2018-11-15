@@ -1,0 +1,313 @@
+/* pages/c_pages/userSetting/userSetting.wxss */
+
+.setContent {
+  width: 100%;
+}
+
+.header-Content>view {
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 15px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.header-Content>view text:nth-child(2), .header-Content>view text:last-child {
+  float: right;
+}  
+
+.photo {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 160rpx;
+  line-height: 160rpx;
+}
+
+.photo image {
+  float: right;
+  margin-right: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.main-Content {
+  margin-top: 20rpx;
+}
+
+.main-Content>view {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  font-size: 15px;
+  border-bottom: 1px solid #dedede;
+}
+
+.main-Content>view>text:nth-child(1) {
+  float: left;
+}
+
+.main-Content>view>text:nth-child(2) {
+  float: right;
+}
+
+.main-Content>view>text:nth-child(3) {
+  float: right;
+  color: red;
+}
+
+.setContent>button {
+  width: 600rpx;
+  height: 100rpx;
+  background-color: #343d50;
+  margin: 100rpx auto 0 auto;
+  padding: 0;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 15px;
+  color: #fff;
+}
+
+/* 性别弹框 */
+
+.selectGender {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.selectGender .zezhao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.selectGender .gender {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 580rpx;
+  height: 380rpx;
+  background-color: #fff;
+  z-index: 2;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.selectGender .gender radio-group>view:first-child {
+  font-size: 20px;
+  margin-bottom: 20rpx;
+}
+
+.selectGender .gender radio-group {
+  margin-top: 40rpx;
+}
+
+.selectGender .gender radio-group>view {
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+}
+
+.selectGender radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: right;
+}
+
+.selectGender .gender radio-group>view  text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 头像选择弹框 */
+
+.choosePhoto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.choosePhoto .zezhao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.choosePhoto .selet {
+  position: absolute;
+  bottom: 140rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 10rpx;
+  width: 96%;
+}
+
+.choosePhoto .selet>view {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #061126;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.choosePhoto .selet>view:first-child {
+  border-bottom: 1px solid #ececec;
+}
+
+.choosePhoto .remove {
+  position: absolute;
+  bottom: 30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #061128;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+.bounced {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bounced .zzc {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2222;
+}
+
+.bounced .authentication {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0 auto;
+  padding: 30rpx;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-sizing:border-box;
+  z-index: 3333;
+}
+
+ .bounced .authentication .mobile {
+  margin-bottom:40rpx;
+  width:100%;
+  height:80rpx;
+  line-height:80rpx;
+  border-bottom:2rpx solid #ccc;
+}
+
+.bounced .authentication .mobile::after {
+  display:block;
+  clear: both;
+  content: ' ';
+}
+
+.authentication .mobile .number {
+  float: left;
+  width:20%;
+  height:80rpx;
+  line-height:80rpx;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.authentication .mobile .input {
+  float: right;
+  width:80%;
+  height:80rpx;
+  line-height:80rpx;
+}
+
+.authentication .mobile .input > input {
+  width:100%;
+  height:80rpx;
+  line-height:80rpx;
+  font-size:16px;
+}
+
+.authentication .affirm {
+  margin:auto;
+  margin-top:60rpx;
+  width:200rpx;
+  height:80rpx;
+  line-height:80rpx;
+  text-align:center;
+  font-size:32rpx;
+  background-color: #ccc;
+  color :#fff;
+  border-radius:10rpx;
+}
+
+.affirmActive {
+  background-color: #2166ff !important;
+}
+
+.cut {
+  position: fixed;
+  bottom:120rpx;
+  left:0;
+  width: 100%;
+  display:flex;
+  justify-content:space-between;
+  box-sizing:border-box;
+}
+
+.cut .driver {
+  flex:1;
+  text-align:center;
+  font-size: 14px;
+}
+
+.cut .driver > i {
+  font-size: 30px;
+}
+
+.cut .owner {
+  flex:1;
+  text-align:center;
+  font-size: 14px;
+  color:blue;
+}
+
+.cut .owner > i {
+  font-size: 30px;
+}

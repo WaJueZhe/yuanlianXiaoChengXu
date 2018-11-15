@@ -1,0 +1,150 @@
+/* pages/manageBill/manageBill.wxss */
+
+.newcontent{
+  margin-top: 20rpx;
+  width: 100%;
+  height: 100%;
+  padding: 0 20rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.nomore {
+  padding-bottom: px2rem(150px);
+  width: 100%;
+  text-align: center;
+  height: px2rem(80px);
+  line-height: px2rem(80px);
+  font-size: 14px;
+  color: #383838;
+}
+.scoll-h {
+  width: 100%;
+  height: 100%;
+}
+
+/* 头部面板 */
+
+.headerContent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #101a30;
+  display: flex;
+}
+
+.headerContent>view {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  font-size: 15px;
+  color: #fff;
+}
+
+/* 选中时的样式 */
+.headerContent .actived{
+  position: relative;
+  font-weight: bold;
+}
+
+.headerContent .actived::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 50%;
+  background-color: #fff;
+}
+
+/* 卡片视图 */
+
+.cardContent {
+  margin-top: 80rpx;
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  border-radius: 20rpx;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  border: 1px solid #ccc;
+  box-shadow: 0 8rpx 8rpx #ccc;
+}
+
+.card:last-child {
+  margin-bottom: 20rpx;
+}
+
+.card .cardTitle {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #343d50;
+  color: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.card .cardTitle>text:nth-child(2) {
+  font-weight: bold;
+}
+
+.card .cardTitle>text:last-child {
+  float: right;
+  font-size: 13px;
+}
+
+.card .cardMain {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.card .cardMain>view {
+  color: #383838;
+  font-size: 15px;
+  margin-top: 20rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card .cardMain>view:first-child {
+  margin: 0;
+}
+
+.card .cardMain>view text:first-child {
+  margin-right: 20rpx;
+}
+
+.card .cardMain>view text:last-child {
+  font-weight: bold;
+}
+
+.card .cardMain>view:last-child text:first-child {
+  opacity: 0;
+}
+
+.card .cardBottom {
+  padding: 0 0 20rpx 70rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.card .cardBottom>text {
+  border: 1px solid #999ea7;
+  padding: 2rpx 6rpx;
+  border-radius: 10rpx;
+  font-size: 14px;
+  margin-right: 10rpx;
+}

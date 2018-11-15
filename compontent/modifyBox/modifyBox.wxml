@@ -1,0 +1,17 @@
+<!--compontent/modifyBox/modifyBox.wxml-->
+<view class="modify" catchtap='_toggle'></view>
+<view class="card">
+    <view class="title">收货实际信息</view>
+    <view class="main">
+      <view class="but1">
+        <view class="jia" bindtap='jiaNum'>＋</view>
+        <view class="bnt">
+          <input type="text" value='{{value}}' bindinput='setValue'></input>
+        </view>
+        <view class="jian" bindtap='jianNum'>－</view>
+      </view>
+    </view>
+    <view class="but">
+      <button catchtap='_cancelEvent'>确认修改</button>
+    </view>
+  </view>

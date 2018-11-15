@@ -1,0 +1,53 @@
+<!--pages/my/my.wxml-->
+<scroll-view class='myContent'>
+  <!-- 头部区域 -->
+  <view class='header'>
+    <view class='me'>
+      <image src='{{imgSrc}}'></image>
+      <view class='meLeft'>
+        <view>{{userinfo.driverName}}</view>
+        <view>{{userinfo.driverMobile}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 主体内容 -->
+  <view class='content'>
+    <!-- 积分 -->
+    <view class='point'>
+      <view>
+        <text>88</text>
+        <view>当前积分</view>
+      </view>
+      <view>
+        <text class="iconfont icon-qiandao"></text>
+        <view>签到</view>
+      </view>
+    </view>
+    <!-- 战绩 -->
+    <view class='gains'>
+      <view bindtap='clkGains' id='1' class='{{activeGain==1?"markActive":""}}'>今日战绩</view>
+      <view bindtap='clkGains' id='2' class='{{activeGain==2?"markActive":""}}'>本月战绩</view>
+    </view>
+    <!-- 单量，里程 -->
+    <view class='number'>
+      <view class='danber'>
+        <view> 
+          <view>
+            <text>{{waybillNum.num}}</text>单
+          </view>
+          <view>完成单量</view>
+        </view>
+      </view>
+      <view class='rodeber'>
+        <view>
+          <view>
+            <text>{{waybillNum.road}}</text>公里
+          </view>
+          <view>配送里程</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 评论模块 -->
+  <app-judeg></app-judeg>
+</scroll-view>

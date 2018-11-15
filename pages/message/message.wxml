@@ -1,0 +1,27 @@
+
+<view class='message'>
+    <!-- 置顶的 -->
+    <view class='Stick'  wx:for="{{StickList}}" wx:key="{{index}}" bindtap='mesDetail'>
+      <navigator url='../messageDetail/messageDetail?id={{item.id}}'>
+        <text class='iconfont icon-xiaoxi'></text>
+        <text class='Stick-title'>{{item.articleTitle}}</text>
+        <text class='Stick-time'>{{item.sendDate}}</text>
+      </navigator>
+    </view>
+
+    <!-- 普通的 -->
+    <view class='mes' wx:for="{{messageList}}" wx:key="{{index}}" bindtap='mesDetail'>
+      <navigator url='../messageDetail/messageDetail?id={{item.id}}'>
+        <text class='iconfont icon-xiaoxi'></text>
+        <text class='title'>{{item.articleTitle}}</text>
+        <text class='time'>{{item.sendDate}}</text>
+      </navigator>
+    </view>
+
+    <view class='nomore' wx:if="{{nomore}}">
+      <text>没有更多数据了</text>
+    </view>
+  
+  
+  
+</view>

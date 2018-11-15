@@ -1,0 +1,95 @@
+<!--pages/c_pages/addWaybill/addWaybill.wxml-->
+<view class="from">
+  <view class="group-item">
+    <view class="original">原始单号：</view>
+    <view class="input">
+      <input type="text" placeholder="原始运单号（选填）" value='{{shpTemp.referId}}' bindinput='setNumbers'></input>
+    </view>
+    <view class="right">
+      <text class="iconfont icon-chadan" bindtap='scanNo'></text>
+    </view>
+  </view>
+  <view class="info-item">
+    <view class="info-left" bindtap='deliver'>
+        <text class="iconfont icon-dingwei1"></text>
+        <text class="name" wx:if="{{deliverItem.currentContactPerson}}"><text wx:if="{{deliverItem.addressName}}">{{deliverItem.addressName}}-</text>{{deliverItem.currentContactPerson}}</text>
+        <text class="name" wx:else>发货单位/发货人</text>
+        <view class="forwarding-unit">
+          <image src='../../../img/u1993.png'></image>
+        </view>
+    </view>
+
+    <view class="info-right" bindtap="startPicker">
+      <text class="iconfont icon-shijian"></text>
+      <text class="sendTime" wx:if="{{startDate}}">{{startDate}}</text>
+      <text class="sendTime" wx:else>发货时间</text>
+    </view>
+  </view>
+  <view class="info-item">
+    <view class="info-left" bindtap='unload'>
+        <text class="iconfont icon-dingwei1"></text>
+        <text class="name" wx:if="{{unloadItem.currentContactPerson}}"><text wx:if="{{unloadItem.addressName}}">{{unloadItem.addressName}}-</text>{{unloadItem.currentContactPerson}}</text>
+        <text class="name" wx:else>收货网点/收货人</text>
+        <view class="forwarding-unit">
+          <image src='../../../img/u1993.png'></image>
+        </view>
+    </view>
+    <view class="info-right" bindtap="endPicker">
+      <text class="iconfont icon-shijian"></text>
+      <text class="sendTime" wx:if="{{endDate}}">{{endDate}}</text>
+      <text class="sendTime" wx:else>收货时间</text>
+    </view>
+  </view>
+
+  <view class="body-view">
+    <switch bindchange="switchChange" />
+    <text>是否代收货款</text>
+  </view>
+
+  <view class="switch-input switchHide{{ showView?'switchShow':'' }}">
+    <view class="group-item">
+      <view class="original">代收金额：</view>
+      <view class="input">
+        <input type="digit" placeholder="代收货款金额（元）" value='{{collectionMoney}}' bindinput='setCollectionMoney'></input>
+      </view>
+    </view>
+  </view>
+
+  <view class="cargo-msg">
+    <navigator url='../receiveMessage/receiveMessage'>
+      <image src='../../../img/u1974.png'></image>
+      <text>货物信息</text>
+    </navigator>
+  </view>
+
+  <view class='group-box' wx:if="{{shpTemp.shipmentUnitList.length > 0}}">
+    <view class='cargo-item'>货物名称</view>
+    <view class='cargo-item'>件数</view>
+    <view class='cargo-item'>体积</view>
+    <view class='cargo-item'>重量</view>
+  </view>
+
+  <view class='group-text' wx:for="{{shpTemp.shipmentUnitList}}" wx:key="{{index}}">
+    <view class='text-item'>{{item.unitDesc}}</view>
+    <view class='text-item'>{{item.plannedUnits}}</view>
+    <view class='text-item'>{{item.plannedVolume}}</view>
+    <view class='text-item'>{{item.plannedWeight}}
+      <text class="iconfont icon-delete" bindtap='delete' data-index="{{index}}"></text>
+    </view>
+  </view>
+
+  <view class="msg-btn">
+    <view class="btn" bindtap='cancle'>取消</view>
+    <view class="btn" bindtap='confirm'>确定</view>
+  </view>
+</view>
+
+<include src="../../../utils/picker_datetime.wxml"/>
+
+
+<!-- <date-picker
+    id="date-picker"
+    value="{{datePickerValue}}" 
+    isShow="{{datePickerIsShow}}"
+    bindsureclick="datePickerOnSureClick"
+    bindcancelclick="datePickerOnCancelClick" /> -->

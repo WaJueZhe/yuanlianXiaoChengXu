@@ -1,0 +1,69 @@
+<!--compontent/home/checkDetailCard/checkDetailCard.wxml-->
+<view class='CardContent'>
+  <view class='card' wx:for="{{carkList}}" wx:key="{{index}}">
+    <!-- 提货标题栏 -->
+    <view class='title pick' wx:if="{{item.stopType == 'D'}}">
+      <text>提货</text>
+      <text>要求提货时间：{{item.planDate}}</text>
+      <view class='{{item.number==item.length?"numberline":""}}'>{{item.number}}</view>
+    </view>
+    <!-- 卸货标题栏 -->
+     <view class='title cargo' wx:if="{{item.stopType == 'U'}}">
+      <text>卸货</text>
+      <text>要求卸货时间：{{item.planDate}}</text>
+      <view class='{{item.number==item.length?"numberline":""}}'>{{item.number}}</view>
+    </view> 
+    <!-- 卡片主体信息 -->
+    <view class='mainContent'>
+      <view class='main-top'>
+        <view>{{item.cityName}}</view>
+        <view class='txt'>
+          <view>
+            <text class='iconfont icon-yundan'></text>{{item.stopCompany}}
+            <!-- {{item.shipmentIdList}} -->
+          </view>
+          <view>
+            <text class='iconfont icon-dingwei'></text> {{item.districtName}}{{item.street}}
+          </view>
+          <view>
+            <text class='iconfont icon-weizhi'></text> 距你：{{item.alldistance}}公里
+          </view>
+          <view wx:if="{{item.paidDriverAmount==null || item.paidDriverAmount ==''}}">
+            <text class='iconfont icon-qian'></text> 无代收贷款
+          </view>
+          <view wx:else>
+            <text class='iconfont icon-qian'></text> 代收贷款金额：{{item.paidDriverAmount}}元
+          </view> 
+        </view>
+        <view>
+          <text>{{item.totalUnits}}{{item.unitUnit}}</text>
+          <text>{{item.totalVolume}}{{item.volumeUnit}}</text>
+          <text>{{item.totalWeight}}{{item.weightUnit}}</text>
+        </view>
+      </view>
+       <view class='main-bottom'>
+        <view bindtap='watchMap' data-addr="{{item.provinceName+item.cityName+item.districtName+item.street}}" data-name="{{item.stopCompany}}" data-lng="{{item.longitudeX}}" data-lat="{{item.lantitudeY}}"> 
+          <text class='iconfont icon-dingwei'></text>查看地图
+        </view>
+        <view bindtap='callPhone' data-phonenum='{{item.contactMobile}}'>
+          <text class='iconfont icon-dianhua1'></text>{{item.contactPerson}}
+        </view>
+      </view>  
+      <!-- 提货操作栏 -->  
+       <view class='main-sign' wx:if="{{item.stopType == 'D'}}">
+        <button wx:if="{{item.actualDate==''||item.actualDate==null}}" id="{{item.id}}" data-signTime="{{item.signTime}}" bindtap='startTask'>起运</button>
+        <button wx:else class='succe'>已起运</button>
+        <button bindtap='toggleCodeS' id='{{item.id}}' wx:if="{{item.signTime==''||item.signTime==null}}">签发</button>
+        <button wx:else class='succe'>已签发</button>
+      </view> 
+      <!-- 卸货操作栏 -->
+       <view class='main-sign' wx:if="{{item.stopType == 'U'}}">
+        <button bindtap='toggleCodeR' data-actualDate="{{item.actualDate}}" id='{{item.id}}'  wx:if="{{(item.signTime==''||item.signTime==null)&&(item.expunconfCount==''||item.expunconfCount==null||item.expunconfCount==0)}}">签收</button>
+        <button wx:if="{{(!(item.signTime==''||item.signTime==null))&&(item.expunconfCount==''||item.expunconfCount==null||item.expunconfCount==0)}}" class='succe'>已签收</button>
+        <button bindtap='succMethod' id='{{item.id}}' wx:if="{{item.actualDate==''||item.actualDate==null}}">到货</button>
+        <button wx:if="{{!(item.actualDate==''||item.actualDate==null)}}" class='succe'>已到货</button>  
+        <button style="background-color: #FF7F00" wx:if="{{(item.expunconfCount!=''&&item.expunconfCount!=null&&item.expunconfCount>0)}}" class='succe' bindtap='abnormal' id='{{item.id}}'>异常签收待确认</button>      
+      </view>   
+    </view>
+  </view>
+</view>

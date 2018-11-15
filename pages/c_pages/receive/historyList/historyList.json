@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "签收运单",
+  "usingComponents": {
+    "historyCard": "../../../../compontent/c_compontent/receiveCard/receiveCard"
+  }
+}

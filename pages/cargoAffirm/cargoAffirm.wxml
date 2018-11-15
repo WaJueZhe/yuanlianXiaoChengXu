@@ -1,0 +1,32 @@
+<!--pages/cargoAffirm/cargoAffirm.wxml-->
+<view class='cargoAffirm'>
+  <view class='title'>发货人：</view>
+  <view class='group-box'>
+    <view class='group'>
+      <view class='group-tit'>货物名称</view>
+      <view class='group-tit'>计划数量</view>
+      <view class='group-tit'>发货数量</view>
+      <view class='group-tit'>签收数量</view>
+    </view>
+    <view class='group'>
+      <view class='group-tit'>玻璃</view>
+      <view class='group-tit'>1</view>
+      <view class='group-tit'>2</view>
+      <view class='group-tit' bindtap='amend'>3
+      <text class='iconfont icon-weibiaoti2010104'></text>
+      </view>
+    </view>
+  </view>
+
+  <view class='info-text'>货损<text>0</text>件，货差<text>0</text>件，其他<text>0</text>件</view>
+
+   <view class='btn'>
+    <view class='confirm'>确定</view>
+    <!-- <view class='confirm'>异常录入</view> -->
+     <view class='confirm'>
+      <navigator url='../practical/practical'>异常录入</navigator>
+    </view> 
+  </view> 
+</view>
+
+<app-modify class="hide{{showView?'show':''}}" bind:cancelEvent="_cancelEvent" bind:toggle="_toggle"></app-modify>

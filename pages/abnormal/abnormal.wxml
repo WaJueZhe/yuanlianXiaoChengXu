@@ -1,0 +1,104 @@
+<!--pages/abnormal/abnormal.wxml-->
+<wxs module="filter" src="../../filter/filter.wxs"></wxs>
+<view class='startContent'>
+  <view class='header-content'>
+    <image wx:if="{{stopInf.driverPic}}" src='{{resourceurl+stopInf.driverPic}}'></image>
+    <image wx:if="{{!stopInf.driverPic}}" src='../../img/headimg.jpg'></image>
+    <view>
+      <view>车牌号：{{stopInf.vehicleNo}}</view>
+      <view>司机：{{stopInf.driverName}}</view>
+      <view>手机：{{stopInf.driverMobile}}</view>
+    </view>
+  </view>
+  <view class='header-table'>
+    <view class='table-title'>
+      <view>始发地</view>
+      <view>货物类型</view>
+      <view>计划发货</view>
+      <view>实际发货</view>
+    </view>
+    <view class='information' wx:for="{{stopInf.detailList}}" wx:key="{{index}}">
+      <view class='table-main {{ informationIndex == index ? "informationActive" : ""}}' bindtap='statusItem' data-index="{{index}}">
+        <view wx:if="{{item.deliverCompany}}">{{item.deliverCompany}}</view> 
+        <view wx:if="{{!item.deliverCompany}}">{{item.deliverContactPerson}}</view> 
+        <view>{{item.unitDesc}}</view>
+        <view>{{item.sendActUnits}}件</view>
+        <view>{{item.recvActUnits}}件
+          <text class="iconfont icon-chenggong" wx:if="{{!(item.confExp>0||item.confNumExp>0||item.unConfExp>0||item.unConfNumExp>0)}}"></text>
+          <text class="iconfont icon-xiugaijilu" wx:if="{{item.confExp>0||item.confNumExp>0||item.unConfExp>0||item.unConfNumExp>0}}"></text> 
+        </view>
+      </view>
+
+       <view class='info-box' wx:if='{{index+1==showBoxIndex&&showBoxIndex!=null}}'>
+        <view class='info-item'>
+          <view class='sign-status' bindtap='statusItem2'>
+            <view class='sign-status-l'>
+              <text>签收情况：</text>
+              <text style='color:blue'>{{item.totalAct}}</text>
+              <text>件</text>
+            </view>
+            <view class='sign-status-r'>
+              <text class="iconfont icon-jiantou" hidden='{{ !isShow }}'></text>
+              <text class="iconfont icon-jiantou_xia" hidden='{{ isShow }}'></text>
+            </view>
+
+          </view>
+          <view class='group-box' hidden="{{ isShow }}">
+            <view class='group'>
+              <view>货物类型</view>
+              <view>发货数量</view>
+              <view>实际签收</view>
+            </view>
+            <view class='group' wx:for="{{item.actUnitDetailList}}" wx:key="{{index}}">
+              <view>{{item.unitDesc}}</view>
+              <view>{{item.sendActUnits}}件</view>
+              <view wx:if="{{item.sendActUnits!=item.recvActUnits}}" style='color:red'>{{item.recvActUnits}}</view>
+               <view wx:if="{{item.sendActUnits==item.recvActUnits}}">{{item.recvActUnits}}</view> 
+            </view>
+          </view>
+        </view>
+
+         <view class='info-item'>
+          <view class='sign-status' bindtap='statusItem3'>
+            <view class='sign-status-l'>
+              <text>异常情况：货损</text>
+              <text style='color:blue'>{{item.totalHS}}</text>
+              <text>件，货差</text>
+              <text style='color:blue'>{{item.totalHC}}</text>
+              <text>其他</text>
+              <text style='color:blue'>{{item.totalQT}}</text>
+              <text>件</text>
+            </view>
+            <view class='sign-status-r'>
+              <text class="iconfont icon-jiantou" hidden='{{ ActiveShow }}'></text>
+              <text class="iconfont icon-jiantou_xia" hidden='{{ !ActiveShow }}'></text>
+            </view>
+
+          </view>
+           <view class='group-box' wx:if="{{ ActiveShow&&item.detailList.length>0 }}">
+            <view class='group'>
+              <view>货物类型</view>
+              <view>发货数量</view>
+              <view>实际签收</view>
+            </view>
+             <view class='group' wx:for="{{item.detailList}}" wx:key="{{index}}">
+              <view>{{item.itemName}}/{{item.itemCode}}</view>
+              <view>{{item.quantity}}</view>
+              <view>{{filter.expType(item.exceptionType)}}</view>  
+            </view> 
+          </view> 
+        </view> 
+      </view> 
+    </view>
+  </view>
+  <view class='middle-people'>发货人姓名：{{stopInf.stopCompany}}/{{stopInf.contactPerson}} {{stopInf.contactMobile}}</view>
+   <view>
+    <navigator url='../cargoAffirm/cargoAffirm'>aa</navigator>
+  </view> 
+
+  <!-- 签名版 -->
+  <view class='writeName'>
+    <app-canvas stopId="{{stopId}}" exception="{{exception}}"></app-canvas>
+  </view>
+
+</view>

@@ -1,0 +1,145 @@
+/* compontent/home/checkDetailCard/checkDetailCard.wxss */
+
+/* 引入字体图标 */
+@import '../../../css/icon-font/iconfont.wxss';
+
+.content {
+  padding: 0 20rpx;
+}
+
+.scoll-h {
+  width: 100%;
+  height: 100vh;
+}
+
+.card {
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0rpx 2rpx 2rpx #ccc;
+}
+
+.card .title {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #343d50;
+  overflow: hidden;
+}
+
+.card .title .til {
+  float: left;
+  font-size: 15px;
+  color: #fff;
+}
+
+.card .title .adress {
+  float: right;
+  color: #fff;
+  font-size: 13px;
+}
+
+.card .xing {
+  padding: 0 20rpx;
+  overflow: hidden;
+}
+
+.card .xing .left {
+  width:100%;
+}
+
+.card .xing .left .txt .msg {
+  margin-top: 10rpx;
+  font-size: 15px;
+  color: #383838;
+}
+
+.card .xing .left .txt .msg::after {
+  display: block;
+  clear: both;
+  content:' ';
+}
+
+.card .xing .left .txt .msg > text:first-child {
+  margin-top: 6rpx;
+  margin-right: 6rpx;
+  float: left;
+  vertical-align: middle;
+}
+
+.card .xing .left .txt .msg .place {
+  float: left;
+  vertical-align: middle;
+}
+
+.card .xing .left .txt .msg .detailPlace {
+  width: 76%;
+  float: left;
+  color: #383838;
+  font-weight: bold;
+}
+
+.card .xing .left .txt .time {
+  margin-top: 10rpx;
+  font-size: 15px;
+  color: #383838;
+}
+
+.card .xing .left .txt .time .planStart {
+  font-size: 15px;
+}
+
+.card .xing .left .txt .time .planStart .date {
+  display: inline-block;
+  font-size: 16x;
+  font-weight: bold;
+}
+
+.card .xing .left .txt .time:last-child > text:first-child {
+  opacity: 0;
+}
+
+.card .xing .left .info {
+  margin-top: 10rpx;
+  padding-left: 40rpx;
+  font-size: 14px;
+  color: #777;
+}
+
+.card .xing .left .info .info-number {
+  display: inline-block;
+  margin-right: 10rpx;
+  border: 1px solid #999ea7;
+  padding: 2rpx 6rpx;
+  border-radius: 6rpx;
+}
+
+.card .xing .left .info .info-number:last-child {
+  margin-left: -10rpx;
+  border: none;
+}
+
+.card .xing .left .info .yundan {
+  float:right;
+  margin-left:80rpx;
+  font-size: 16px;
+  border: none;
+}
+
+.hide{
+ display: none;
+}
+.show{ 
+ display: block;
+}
+
+.nomore {
+  margin: 20rpx 0;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}

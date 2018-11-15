@@ -1,0 +1,90 @@
+<!--compontent/my/judeg/judeg.wxml-->
+<!-- 评价模块 -->
+<view class='judeg-content'>
+  <view class='pepole'>
+    <button bindtap='clkpeople' data-num='1' class='{{activePeople==1?"activePeople":""}}'>收货人评价</button>
+    <button bindtap='clkpeople' data-num='2' class='{{activePeople==2?"activePeople":""}}'>发货人评价</button>
+  </view>
+  <!-- 满意程度 -->
+  <view class='how'>
+    <view wx:if="{{!toggleJudgeShow}}">
+      <button bindtap='clkjudge' id='1' class="{{activeJudeg=='1'?'activeHow':''}}">全部({{takejudgeNum.all}})</button>
+      <button bindtap='clkjudge' id='2' class="{{activeJudeg=='2'?'activeHow':''}}">满意({{takejudgeNum.love}})</button>
+      <button bindtap='clkjudge' id='3' class="{{activeJudeg=='3'?'activeHow':''}}">不满意({{takejudgeNum.detest}})</button>
+    </view>
+    <view wx:if="{{toggleJudgeShow}}">
+      <button bindtap='clkjudge' id='1' class="{{activeJudeg=='1'?'activeHow':''}}">全部({{sendjudgeNum.all}})</button>
+      <button bindtap='clkjudge' id='2' class="{{activeJudeg=='2'?'activeHow':''}}">满意({{sendjudgeNum.love}})</button>
+      <button bindtap='clkjudge' id='3' class="{{activeJudeg=='3'?'activeHow':''}}">不满意({{sendjudgeNum.detest}})</button>
+    </view>
+  </view>
+  <!-- 评论具体内容/收货人 -->
+  <view class='conMain' wx:if="{{!toggleJudgeShow}}">
+    <view wx:for="{{evlist}}" wx:key="{{index}}" wx:if="{{activeJudeg==1}}">
+      <view class='headerPhoto'>
+        <image src='../../../img/foot_mv_s.png'></image>
+        <text>{{item.evaluateName}}</text>
+        <text class='time'>{{item.createDate}}</text>
+      </view>
+      <view class='text' wx:if="{{item.evaluateComment}}">{{item.evaluateComment}}</view>
+      <view class='text' wx:else>无评价</view>
+    </view>
+
+    <view wx:for="{{evlist}}" wx:key="{{index}}" wx:if="{{item.evaluateLevel>=3&&activeJudeg==2}}">
+      <view class='headerPhoto'>
+        <image src='../../../img/foot_mv_s.png'></image>
+        <text>{{item.evaluateName}}</text>
+        <text class='time'>{{item.createDate}}</text>
+      </view>
+      <view class='text' wx:if="{{item.evaluateComment}}">{{item.evaluateComment}}</view>
+      <view class='text' wx:else>无评价</view>
+    </view>
+
+    <view wx:for="{{evlist}}" wx:key="{{index}}" wx:if="{{item.evaluateLevel<3&&activeJudeg==3}}">
+      <view class='headerPhoto'>
+        <image src='../../../img/foot_mv_s.png'></image>
+        <text>{{item.evaluateName}}</text>
+        <text class='time'>{{item.createDate}}</text>
+      </view>
+      <view class='text' wx:if="{{item.evaluateComment}}">{{item.evaluateComment}}</view>
+      <view class='text' wx:else>无评价</view>
+    </view>
+
+  </view>
+  <view wx:elif="{{!toggleJudgeShow&&takeLength==0}}" style='text-align:center;font-size:15px;height:80rpx;line-height:80rpx;'>暂无评论</view>
+
+<!-- 发货人评论内容 -->
+  <view class='conMain' wx:if="{{toggleJudgeShow}}">
+    <view wx:for="{{evlist}}" wx:key="{{index}}" wx:if="{{activeJudeg==1}}">
+      <view class='headerPhoto'>
+        <image src='../../../img/foot_mv_s.png'></image>
+        <text>{{item.evaluateName}}</text>
+        <text class='time'>{{item.createDate}}</text>
+      </view>
+      <view class='text' wx:if="{{item.evaluateComment}}">{{item.evaluateComment}}</view>
+      <view class='text' wx:else>无评价</view>
+    </view>
+
+    <view wx:for="{{evlist}}" wx:key="{{index}}"  wx:if="{{item.evaluateLevel>=3&&activeJudeg==2}}">
+      <view class='headerPhoto'>
+        <image src='../../../img/foot_mv_s.png'></image>
+        <text>{{item.evaluateName}}</text>
+        <text class='time'>{{item.createDate}}</text>
+      </view>
+      <view class='text' wx:if="{{item.evaluateComment}}">{{item.evaluateComment}}</view>
+      <view class='text' wx:else>无评价</view>
+    </view>
+
+    <view wx:for="{{evlist}}" wx:key="{{index}}" wx:if="{{item.evaluateLevel<3&&activeJudeg==3}}">
+      <view class='headerPhoto'>
+        <image src='../../../img/foot_mv_s.png'></image>
+        <text>{{item.evaluateName}}</text>
+        <text class='time'>{{item.createDate}}</text>
+      </view>
+      <view class='text' wx:if="{{item.evaluateComment}}">{{item.evaluateComment}}</view>
+      <view class='text' wx:else>无评价</view>
+    </view>
+
+  </view>
+  <view wx:elif="{{toggleJudgeShow&&sendLength==0}}" style='text-align:center;font-size:15px;height:80rpx;line-height:80rpx;'>暂无评论</view>
+</view>
